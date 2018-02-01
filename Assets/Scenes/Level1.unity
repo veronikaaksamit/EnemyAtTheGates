@@ -1000,7 +1000,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4537315117791402, guid: 1e54b85761dc3b14f95641b11e1ccb2a, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1850889979343084, guid: 1e54b85761dc3b14f95641b11e1ccb2a, type: 2}
       propertyPath: m_Name
@@ -1571,7 +1571,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4891493611345678, guid: 05846c9493d462e4cb96bbe35444d779, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1014741773019792, guid: 05846c9493d462e4cb96bbe35444d779, type: 2}
       propertyPath: m_Name
@@ -4643,6 +4643,52 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0781c446ec350f84cbe47690e8e27b6f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1733125811
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452278606816764, guid: d618a492590e53a4387888a5e39290bc, type: 2}
+      propertyPath: m_Name
+      value: TankBarrier3D
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d618a492590e53a4387888a5e39290bc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1744173228
 Prefab:
