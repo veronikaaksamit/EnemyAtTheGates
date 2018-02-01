@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212390534882433556}
   m_Layer: 0
   m_Name: tankB
-  m_TagString: House
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295

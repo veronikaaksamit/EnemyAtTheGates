@@ -9,6 +9,7 @@ TagManager:
   - House
   - TankBarrier
   - BarbedWire
+  - Mine
   layers:
   - Default
   - TransparentFX
