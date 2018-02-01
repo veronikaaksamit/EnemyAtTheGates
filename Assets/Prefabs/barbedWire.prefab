@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65001129567808414}
   - component: {fileID: 23576010092455620}
   m_Layer: 0
-  m_Name: BarbedWire
+  m_Name: barbedWire
   m_TagString: BarbedWire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b723a9de1bea4ef40a0b81c6d1b6c169, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c56beca9bd84fbd4bb06f783aebfb747, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
