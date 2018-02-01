@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 //TODO: experience bonuses
 
@@ -34,13 +35,18 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
             return;
         }
 
-        target.TakeDamage(m_damagePerShot, this);
+        bool hits = UnityEngine.Random.Range(0.0f, 1.0f) < m_accuracy;
 
-        if (target.GetHealth() <= 0)
+        if (hits)
         {
-            ++m_experience;
-        }
+            target.TakeDamage(m_damagePerShot, this);
 
+            if (target.GetHealth() <= 0)
+            {
+                ++m_experience;
+            }
+        }
+        
         m_timeSinceLastShotInS = Time.time;
     }
 }
