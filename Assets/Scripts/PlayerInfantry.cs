@@ -8,7 +8,6 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerInfantry : MonoBehaviour, IPlayerUnit
 {
-    [SerializeField] private int m_health = 1;
     [SerializeField] private float m_reloadTimeInS = 1.0f;
     [SerializeField] private int m_damagePerShot = 1;
     [SerializeField] private float m_range = 1.0f;
@@ -21,21 +20,6 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
     {
         var closestOpposingUnit = UnitUtils.GetClosesEnemyUnitInRange(transform.position, m_range);
         TryShootAt(closestOpposingUnit);
-    }
-
-    public UnitType GetUnitType()
-    {
-        return UnitType.Infatryman;
-    }
-
-    public int GetHealth()
-    {
-        return m_health;
-    }
-
-    public Vector3 GetPosition()
-    {
-        return transform.position;
     }
 
     public void SetPosition(Vector3 newPosition)
