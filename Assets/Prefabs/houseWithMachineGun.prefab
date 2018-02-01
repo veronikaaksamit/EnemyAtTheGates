@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65827541265048490}
   - component: {fileID: 23757350061250836}
   m_Layer: 0
-  m_Name: House (84)
+  m_Name: houseWithMachineGun
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1

@@ -10,6 +10,7 @@ TagManager:
   - TankBarrier
   - BarbedWire
   - Mine
+  - AntiAircraftW
   layers:
   - Default
   - TransparentFX
