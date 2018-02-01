@@ -4,21 +4,24 @@ using System.Linq;
 using UnityEngine;
 
 public static class UnitUtils{
-    public static IEnumerable<IUnit> GetUnitsInRadius(Vector3 center, float radius)
+    public static IEnumerable<IEnemyUnit> GetEnemyUnitsInRadius(Vector3 center, float range)
     {
-        var unitsCollisionLayer = LayerMask.NameToLayer("Unit");
-        var unitCollidersInRadius = Physics.OverlapSphere(center, radius, unitsCollisionLayer);
+        var unitsCollisionLayer = LayerMask.NameToLayer("EnemyUnit");
+        var unitCollidersInRadius = Physics.OverlapSphere(center, range, unitsCollisionLayer);
 
-        return unitCollidersInRadius.Select(collider => collider.GetComponent<IUnit>());
+        return unitCollidersInRadius.Select(collider => collider.GetComponent<IEnemyUnit>());
     }
 
-    public static IEnumerable<IUnit> GetEnemyUnitsInRadius(Vector3 center, float radius)
+    public static IEnemyUnit GetClosesEnemyUnitInRange(Vector3 center, float range)
     {
-        return GetUnitsInRadius(center, radius).Where(unit => unit.GetAffiliation() == UnitAffiliation.Enemy);
-    }
+        var enemyUnitsInRange = UnitUtils.GetEnemyUnitsInRadius(center, range);
 
-    public static IEnumerable<IUnit> GetPlayerUnitsInRadius(Vector3 center, float radius)
-    {
-        return GetUnitsInRadius(center, radius).Where(unit => unit.GetAffiliation() == UnitAffiliation.Player);
+        return enemyUnitsInRange.Aggregate(
+            (l, r) =>
+                Vector3.Distance(l.GetPosition(), center) <
+                Vector3.Distance(r.GetPosition(), center)
+                    ? l
+                    : r
+        );
     }
 }
