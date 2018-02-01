@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4797172193501556}
   - component: {fileID: 212996938004967718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -40,8 +40,7 @@ GameObject:
   - component: {fileID: 23720127580823218}
   - component: {fileID: 195403635019718640}
   - component: {fileID: 114769157909085104}
-  - component: {fileID: 114873314579418378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: soldier
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -138,26 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb3fc20264445f48985b76bb50b2d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114873314579418378
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1323341215647832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c364443c2e6af4d8bf96888c9b988b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_affiliation: 0
-  m_health: 1
-  m_reloadTimeInS: 1
-  m_damagePerShot: 1
-  m_range: 1
-  m_experience: 0
-  m_cost:
-    Type: 1
-    Count: 10
 --- !u!195 &195403635019718640
 NavMeshAgent:
   m_ObjectHideFlags: 1
