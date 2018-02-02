@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 424521862}
   m_Layer: 5
   m_Name: machineGunButton
-  m_TagString: Untagged
+  m_TagString: MachineGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,7 +1335,7 @@ GameObject:
   - component: {fileID: 458018367}
   m_Layer: 5
   m_Name: antiAircraftButon
-  m_TagString: Untagged
+  m_TagString: AntiAircraftW
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2585,7 +2585,7 @@ GameObject:
   - component: {fileID: 895276856}
   m_Layer: 5
   m_Name: sniperButton
-  m_TagString: Untagged
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3922,7 +3922,7 @@ GameObject:
   - component: {fileID: 1243382872}
   m_Layer: 5
   m_Name: tankBarrierButton
-  m_TagString: Untagged
+  m_TagString: TankBarrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4727,7 +4727,7 @@ GameObject:
   - component: {fileID: 1451960752}
   m_Layer: 5
   m_Name: barbedWireButton
-  m_TagString: Untagged
+  m_TagString: BarbedWire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5887,7 +5887,7 @@ GameObject:
   - component: {fileID: 1758693536}
   m_Layer: 5
   m_Name: mineButton
-  m_TagString: Untagged
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6508,7 +6508,7 @@ GameObject:
   - component: {fileID: 1937231783}
   m_Layer: 5
   m_Name: bomberButton
-  m_TagString: Untagged
+  m_TagString: Bomber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

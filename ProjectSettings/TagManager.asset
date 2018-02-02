@@ -12,6 +12,9 @@ TagManager:
   - Mine
   - AntiAircraftW
   - Floor
+  - MachineGun
+  - Sniper
+  - Bomber
   layers:
   - Default
   - TransparentFX
