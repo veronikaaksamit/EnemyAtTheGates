@@ -3261,7 +3261,7 @@ GameObject:
   - component: {fileID: 1018535568}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5256,6 +5256,16 @@ Prefab:
     - target: {fileID: 4085111504038698, guid: 5f8bb25808e079c458bacc211f9e858d, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 65328113818073890, guid: 5f8bb25808e079c458bacc211f9e858d,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65328113818073890, guid: 5f8bb25808e079c458bacc211f9e858d,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f8bb25808e079c458bacc211f9e858d, type: 2}
