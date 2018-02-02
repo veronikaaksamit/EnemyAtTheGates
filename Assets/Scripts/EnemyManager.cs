@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     public GameObject Enemy;
     public float SpawnTime = 12f;
     public int NumberOfEnemies = 4;
+    public bool Rotate = true;
     public Transform[] SpawnPoints;
 
 
@@ -26,7 +27,16 @@ public class EnemyManager : MonoBehaviour
         {
             int spawnPointIndex = Random.Range(0, SpawnPoints.Length);
 
-            Instantiate(Enemy, SpawnPoints[spawnPointIndex].position, SpawnPoints[spawnPointIndex].rotation);
+            Quaternion rotation;
+            if (Rotate)
+            {
+                rotation = SpawnPoints[spawnPointIndex].rotation;
+            }
+            else
+            {
+                rotation = Enemy.transform.rotation;
+            }
+            Instantiate(Enemy, SpawnPoints[spawnPointIndex].position, rotation);
             NumberOfEnemies--;
             if (NumberOfEnemies == 0) CancelInvoke("Spawn");
         }

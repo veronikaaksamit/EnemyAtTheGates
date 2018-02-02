@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4670041520838424}
   - component: {fileID: 212390534882433556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tankB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
+  m_NavMeshLayer: 4
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1452278606816764
@@ -38,11 +38,11 @@ GameObject:
   - component: {fileID: 33349824166228460}
   - component: {fileID: 65743408358102470}
   - component: {fileID: 23235172370102904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: tank_barrier
   m_TagString: TankBarrier
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
+  m_NavMeshLayer: 4
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4670041520838424
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1232233092616160}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 7.554377, y: 7.5810776, z: 1}
   m_Children: []
   m_Father: {fileID: 4773294067910078}
@@ -65,8 +65,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1452278606816764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.14, y: 0, z: -3.66}
-  m_LocalScale: {x: 0.88955, y: 1, z: 1.0552604}
+  m_LocalPosition: {x: -3.14, y: 0.212, z: -3.66}
+  m_LocalScale: {x: 0.88955, y: 0, z: 1.0552604}
   m_Children:
   - {fileID: 4670041520838424}
   m_Father: {fileID: 0}
