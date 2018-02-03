@@ -17,7 +17,7 @@ namespace Assets.Scripts
         public void UpdateButtons()
         {
              
-            Debug.Log("Number of buttons is" + buttons.Length);
+            //Debug.Log("Number of buttons is" + buttons.Length);
 
             for (int i = 0; i < buttons.Length; i++)
             {

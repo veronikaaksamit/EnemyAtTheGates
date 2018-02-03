@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -12,7 +13,9 @@ namespace Assets.Scripts
         public GameObject InfantrymanPrefab;
         public GameObject SniperPrefab;
         public GameObject MachineGunNestPrefab;
-        public GameObject TankPrefab;
+        public GameObject AntiAircraftWarfarePrefab;
+
+        public GameObject[] Costs;
 
         public int ManpowerIncomePerS = 1;
         private float m_lastManpowerIncomeTime = 0.0f;
@@ -26,6 +29,11 @@ namespace Assets.Scripts
 
         public IBlockade[] AvailableBlockades;
 
+        void Start()
+        {
+            
+        }
+
         void Update()
         {
             if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= 1.0f)
@@ -33,6 +41,23 @@ namespace Assets.Scripts
                 Resources[0].Count += ManpowerIncomePerS;
                 m_lastManpowerIncomeTime = Time.time;
             }
+        }
+
+        public GameResources[] GetValueOfUtility(string tag)
+        {
+            GameResources[] values = new GameResources[3];
+            foreach (var cost in Costs)
+            {
+                UtilityCost utilCost = cost.GetComponent<UtilityCost>();
+               
+                if (cost.tag.Equals(tag))
+                {
+                    values[0] = new GameResources(GameResourcesType.Manpower, utilCost.ManPowerCost);
+                    values[1] = new GameResources(GameResourcesType.Weapons, utilCost.WeaponsCost);
+                    values[2] = new GameResources(GameResourcesType.TankMunition, utilCost.MunitionCost);
+                }
+            }
+            return values;
         }
 
         public int GetManPowerValue()

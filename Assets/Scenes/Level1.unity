@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 104534977}
   m_Layer: 5
   m_Name: WeaponValue
-  m_TagString: Untagged
+  m_TagString: Weapons
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -845,7 +845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70.4, y: 15.799988}
+  m_AnchoredPosition: {x: 84.1, y: 15.799988}
   m_SizeDelta: {x: 54.99, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108376125
@@ -1883,6 +1883,39 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0781c446ec350f84cbe47690e8e27b6f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &401472379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 401472380}
+  m_Layer: 0
+  m_Name: UtilityCosts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &401472380
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401472379}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1853351065}
+  - {fileID: 777762760}
+  - {fileID: 1452648526}
+  - {fileID: 1732489243}
+  - {fileID: 708663871}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &411691847
 Prefab:
   m_ObjectHideFlags: 0
@@ -2037,6 +2070,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1246122521}
+        m_MethodName: UpdateTexts
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MachineGun
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2293,6 +2337,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1246122521}
+        m_MethodName: UpdateTexts
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bomber
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &458018368
@@ -2459,7 +2514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 66.61, y: 15.799988}
+  m_AnchoredPosition: {x: 78.6, y: 15.799988}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500543074
@@ -2606,7 +2661,7 @@ GameObject:
   - component: {fileID: 537187700}
   m_Layer: 5
   m_Name: ManPowerValue
-  m_TagString: Untagged
+  m_TagString: ManPower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3085,7 +3140,7 @@ GameObject:
   - component: {fileID: 586742562}
   m_Layer: 5
   m_Name: SoldierButton
-  m_TagString: MachineGun
+  m_TagString: Soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3168,6 +3223,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1246122521}
+        m_MethodName: UpdateTexts
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Soldier
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3471,8 +3537,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -226.7, y: 0}
-  m_SizeDelta: {x: 35, y: 30}
+  m_AnchoredPosition: {x: -210.6, y: 0}
+  m_SizeDelta: {x: 54.8, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637700451
 MonoBehaviour:
@@ -3791,6 +3857,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyPlayer: {fileID: 142852861}
+--- !u!1 &708663870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 708663871}
+  - component: {fileID: 708663872}
+  m_Layer: 0
+  m_Name: AntiAircraftW
+  m_TagString: AntiAircraftW
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &708663871
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708663870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401472380}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708663872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708663870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c257811a60b0504ab77a78adabee6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManPowerCost: 4
+  WeaponsCost: 3
+  MunitionCost: 2
 --- !u!1001 &710267927
 Prefab:
   m_ObjectHideFlags: 0
@@ -3980,6 +4089,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 772599722}
+--- !u!1 &777762759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 777762760}
+  - component: {fileID: 777762761}
+  m_Layer: 0
+  m_Name: Sniper
+  m_TagString: Sniper
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &777762760
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777762759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401472380}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &777762761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 777762759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c257811a60b0504ab77a78adabee6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManPowerCost: 3
+  WeaponsCost: 2
+  MunitionCost: 30
 --- !u!4 &786344595 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4896968709635252, guid: 0781c446ec350f84cbe47690e8e27b6f,
@@ -4312,6 +4464,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1246122521}
+        m_MethodName: UpdateTexts
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Sniper
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &895276857
@@ -4554,8 +4717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -435, y: 0}
-  m_SizeDelta: {x: 35, y: 30}
+  m_AnchoredPosition: {x: -443, y: 0}
+  m_SizeDelta: {x: 57.2, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931123689
 MonoBehaviour:
@@ -5000,7 +5163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 66.61, y: 15.799988}
+  m_AnchoredPosition: {x: 76.3, y: 15.799988}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &985844737
@@ -5210,7 +5373,7 @@ GameObject:
   - component: {fileID: 1087829768}
   m_Layer: 5
   m_Name: MunitionValue
-  m_TagString: Untagged
+  m_TagString: Munition
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5992,6 +6155,7 @@ GameObject:
   - component: {fileID: 1246122518}
   - component: {fileID: 1246122520}
   - component: {fileID: 1246122519}
+  - component: {fileID: 1246122521}
   m_Layer: 1
   m_Name: PanelTop
   m_TagString: Untagged
@@ -6051,6 +6215,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1246122517}
+--- !u!114 &1246122521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1246122517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3082e35356f22b64ea8ad246aeaa2b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyPlayer: {fileID: 142852861}
 --- !u!4 &1248125450 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4896968709635252, guid: 0781c446ec350f84cbe47690e8e27b6f,
@@ -6935,6 +7111,49 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451960750}
+--- !u!1 &1452648525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1452648526}
+  - component: {fileID: 1452648527}
+  m_Layer: 0
+  m_Name: Bomber
+  m_TagString: Bomber
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1452648526
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452648525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401472380}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1452648527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452648525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c257811a60b0504ab77a78adabee6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManPowerCost: 12
+  WeaponsCost: 50
+  MunitionCost: 3
 --- !u!1001 &1453819949
 Prefab:
   m_ObjectHideFlags: 0
@@ -6942,6 +7161,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4093981682189536, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6977,12 +7201,12 @@ Prefab:
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
       propertyPath: NumOfMines
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
       propertyPath: NumOfTankBarriers
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
@@ -7002,13 +7226,62 @@ Prefab:
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
       propertyPath: Resources.Array.data[1].Count
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
       propertyPath: Resources.Array.data[2].Count
-      value: 1
+      value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: MachineGunNestPrefab
+      value: 
+      objectReference: {fileID: 1293553600594214, guid: fe0b778b7f9a83647b413b42e2db3a11,
+        type: 2}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: SniperPrefab
+      value: 
+      objectReference: {fileID: 1742543470269132, guid: 4e300c60f74a5e64eb76f1f12a2f77d9,
+        type: 2}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: InfantrymanPrefab
+      value: 
+      objectReference: {fileID: 1387245949369504, guid: 3b9c7637621043b49b0e32b1fa2a047b,
+        type: 2}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: AntiAircraftWarfarePrefab
+      value: 
+      objectReference: {fileID: 1826235702829612, guid: dbc0da3e6a302254d93d5128e2953fac,
+        type: 2}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.data[4]
+      value: 
+      objectReference: {fileID: 708663870}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1853351064}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.data[1]
+      value: 
+      objectReference: {fileID: 777762759}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1452648525}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Costs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1732489242}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
   m_IsPrefabParent: 0
@@ -7261,7 +7534,7 @@ GameObject:
   - component: {fileID: 1486851784}
   m_Layer: 5
   m_Name: Text1
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7774,7 +8047,7 @@ GameObject:
   - component: {fileID: 1580625721}
   m_Layer: 5
   m_Name: Text2
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8030,6 +8303,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0781c446ec350f84cbe47690e8e27b6f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1732489242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1732489243}
+  - component: {fileID: 1732489244}
+  m_Layer: 0
+  m_Name: Soldier
+  m_TagString: Soldier
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1732489243
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732489242}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401472380}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1732489244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1732489242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c257811a60b0504ab77a78adabee6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManPowerCost: 1
+  WeaponsCost: 4
+  MunitionCost: 10
 --- !u!1001 &1733125811
 Prefab:
   m_ObjectHideFlags: 0
@@ -8769,6 +9085,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4896968709635252, guid: 0781c446ec350f84cbe47690e8e27b6f,
     type: 2}
   m_PrefabInternal: {fileID: 1756386590}
+--- !u!1 &1853351064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1853351065}
+  - component: {fileID: 1853351066}
+  m_Layer: 0
+  m_Name: MachineGun
+  m_TagString: MachineGun
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853351065
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853351064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401472380}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1853351066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853351064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c257811a60b0504ab77a78adabee6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManPowerCost: 3
+  WeaponsCost: 2
+  MunitionCost: 20
 --- !u!1001 &1856684200
 Prefab:
   m_ObjectHideFlags: 0
@@ -8998,8 +9357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.3, y: 0}
-  m_SizeDelta: {x: 35, y: 30}
+  m_AnchoredPosition: {x: -340.5, y: 0}
+  m_SizeDelta: {x: 45.85, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907125719
 MonoBehaviour:
@@ -9213,6 +9572,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1246122521}
+        m_MethodName: UpdateTexts
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bomber
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
