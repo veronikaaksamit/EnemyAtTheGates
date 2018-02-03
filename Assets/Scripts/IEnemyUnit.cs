@@ -5,9 +5,11 @@ using UnityEngine;
 public interface IEnemyUnit
 {
 
-    void TakeDamage(int damage, IPlayerUnit damageDealer);
+    void TakeDamage(float damage, IPlayerUnit damageDealer);
 
-    int GetHealth();
+    void TakeDamageUnmodified(float damage);
+
+    float GetHealth();
 
     Vector3 GetPosition();
 
