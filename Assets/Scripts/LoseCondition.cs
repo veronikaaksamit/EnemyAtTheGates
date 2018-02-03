@@ -1,23 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Collider))]
-public class LoseCondition : MonoBehaviour
+namespace Assets.Scripts
 {
-    public UnityEvent GameLost;
-
-    void OnCollisionEnter(Collision collision)
+    [RequireComponent(typeof(Collider))]
+    public class LoseCondition : MonoBehaviour
     {
-        if (collision.gameObject.GetComponent<IEnemyUnit>() == null)
-        {
-            return;
-        }
+        public UnityEvent GameLost;
 
-        if (GameLost != null)
+        void OnCollisionEnter(Collision collision)
         {
-            GameLost.Invoke();
+            if (collision.gameObject.GetComponent<IEnemyUnit>() == null)
+            {
+                return;
+            }
+
+            if (GameLost != null)
+            {
+                GameLost.Invoke();
+            }
         }
     }
 }
