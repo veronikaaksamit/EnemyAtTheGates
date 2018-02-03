@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521e2f082126cf14490721a3eeeca75a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 50
+  m_health: 20
   m_fromInfantryDamageModifier: 0.5
   m_fromSniperDamageModifier: 0.5
 --- !u!114 &114981904433678268
