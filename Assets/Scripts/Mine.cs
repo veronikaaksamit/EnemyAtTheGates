@@ -6,14 +6,15 @@ public class Mine : MonoBehaviour
 {
     [SerializeField] private float m_damage = 50.0f;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        var enemyUnit = collision.gameObject.GetComponent<IEnemyUnit>();
+        var enemyUnit = collider.GetComponent<IEnemyUnit>();
 
         if (enemyUnit == null)
             return;
 
         enemyUnit.TakeDamageUnmodified(m_damage);
+        Destroy(gameObject);
     }
 
 }
