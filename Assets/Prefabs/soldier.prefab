@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 114769157909085104}
   - component: {fileID: 114207510364367336}
   - component: {fileID: 114597531502064952}
+  - component: {fileID: 114849909000612278}
+  - component: {fileID: 114841013060987796}
   m_Layer: 8
   m_Name: soldier
   m_TagString: Enemy
@@ -163,6 +165,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementEnabled: 1
+--- !u!114 &114841013060987796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323341215647832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockadeTag: BarbedWire
+  TimeToDestroy: 15
+--- !u!114 &114849909000612278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323341215647832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockadeTag: Barricade
+  TimeToDestroy: 10
 --- !u!195 &195403635019718640
 NavMeshAgent:
   m_ObjectHideFlags: 1

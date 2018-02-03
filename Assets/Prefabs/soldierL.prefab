@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 114243480637232714}
   - component: {fileID: 114799807645505328}
   - component: {fileID: 114134653378460014}
+  - component: {fileID: 114189350605052958}
+  - component: {fileID: 114039159581501140}
   m_Layer: 8
   m_Name: soldierL
   m_TagString: Enemy
@@ -126,6 +128,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114039159581501140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142568737995610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockadeTag: BarbedWire
+  TimeToDestroy: 15
 --- !u!114 &114134653378460014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 10
+--- !u!114 &114189350605052958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142568737995610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockadeTag: Barricade
+  TimeToDestroy: 10
 --- !u!114 &114243480637232714
 MonoBehaviour:
   m_ObjectHideFlags: 1

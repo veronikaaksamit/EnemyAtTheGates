@@ -3,24 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - CityHall
-  - Enemy
-  - House
-  - TankBarrier
-  - BarbedWire
-  - Mine
-  - AntiAircraftW
-  - Floor
-  - MachineGun
-  - Sniper
-  - Bomber
-  - Navigation
-  - ManPower
-  - Munition
-  - Weapons
-  - Soldier
-  - Text
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -30,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - EnemyUnit
-  - Obstacle
-  - Bullet
-  - House
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
