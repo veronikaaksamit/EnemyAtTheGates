@@ -1,115 +1,174 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor;
+﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Button = UnityEngine.Experimental.UIElements.Button;
 
-public class NewElementManager : MonoBehaviour
+
+namespace Assets.Scripts
 {
-
-    public GameObject[] Elements;
-    public int selectedButtonIndex = 10;
-
-	void Start () {
-		
-	}
-
-    public void SetSelectedButtonIndex(int selectedButton)
+    public class NewElementManager : MonoBehaviour
     {
-        selectedButtonIndex = selectedButton;
-    }
+        public Player MyPlayer;
+        public GameObject[] Elements;
+        public int SelectedButtonIndex = 10;
+        
 
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
+        void Start ()
         {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out  hit))
+        }
+
+        
+
+        void Update()
+        {
+            //Debug.Log("Update");
+            if (Input.GetMouseButton(0))
             {
-                if (Input.GetKey(KeyCode.Mouse0))
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out  hit))
                 {
-                    if (Elements.Length > 0)
+                    if (Input.GetKey(KeyCode.Mouse0))
                     {
-                        GameObject element = GetElementToInstantiate();
-                        GameObject created = null;
-                        if (element != null)
+                        if (Elements.Length > 0)
                         {
-                            GameObject closestObject = GetClosestObject(hit);
-
-                            if (hit.collider.gameObject.tag == "House" && selectedButtonIndex > 2)
+                            GameObject element = GetElementToInstantiate();
+                            GameObject created = null;
+                            if (element != null)
                             {
-                                GameObject house = hit.collider.gameObject;
-                                Vector3 position = house.transform.position;
-                                created = Instantiate(element, position, Quaternion.identity);
-                            }
+                                GameObject closestObject = GetClosestObject(hit);
 
-                            if (hit.collider.gameObject.tag == "Floor" && selectedButtonIndex < 3)
-                            {
-                                created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                            }
-
-                            GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-                            selectedButtonIndex = 10;
-
-                            if (created != null)
-                            {
-                                
-                                if (closestObject.GetComponent<Collider>().bounds.Intersects(created.GetComponent<Collider>().bounds))
+                                if (hit.collider.gameObject.tag == "House" && SelectedButtonIndex > 2)
                                 {
-                                    Debug.Log("Bounds intersecting " + closestObject.tag );
+                                    GameObject house = hit.collider.gameObject;
+                                    Vector3 position = house.transform.position;
+                                    Destroy(hit.collider.gameObject);
+                                    created = Instantiate(element, position, Quaternion.identity);
+                                }
+
+                                if (hit.collider.gameObject.tag == "Floor" && SelectedButtonIndex < 3)
+                                {
+                                    created = InstantiateElement(element, hit);
+                                }
+
+                                GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+                                SelectedButtonIndex = 10;
+
+                                if (created != null && closestObject != null)
+                                {
+                                    if (closestObject.GetComponent<Collider>().bounds.Intersects(created.GetComponent<Collider>().bounds))
+                                    {
+                                        //Debug.Log("Bounds intersecting " + closestObject.tag );
+                                    }
                                 }
                             }
                         }
+
                     }
 
                 }
-
             }
         }
-    }
 
 
-    private GameObject GetElementToInstantiate()
-    {
-        GameObject result = null;
-        if (Elements.Length > selectedButtonIndex)
+        public void SetSelectedButtonIndex(int selectedButton)
         {
-            result = Elements[selectedButtonIndex];
+            SelectedButtonIndex = selectedButton;
         }
-        return result;
-    }
 
-    private GameObject GetClosestObject(RaycastHit hit)
-    {
-        Collider closestCollider = null;
-        
-        Collider[] colliders = Physics.OverlapBox(hit.point, new Vector3(0.5f, 0.5f, 0.5f));
-            
-        foreach (var c in colliders)
+        private GameObject InstantiateElement(GameObject element, RaycastHit hit)
         {
-            if (c.gameObject.tag != "Floor")
+            GameObject created = null;
+            if (CanUseThatElement(element))
             {
-                if (closestCollider == null)
-                {
-                    closestCollider = c;
-                }
+                created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
+                Debug.Log("Using " + element.tag);
+                UseThatElement(element);
 
-                if (Vector3.Distance(hit.point, c.gameObject.transform.position) <=
-                    Vector3.Distance(hit.point, closestCollider.transform.position))
-                {
-                    closestCollider = c;
-                }
             }
+            return created;
+        }
 
-        }
-        if (closestCollider != null)
+        private bool CanUseThatElement(GameObject element)
         {
-            Debug.Log("closest object is " + closestCollider.gameObject.tag + " pos "+ closestCollider.gameObject.transform.position);
+            
+            switch (element.tag)
+            {
+                case "BarbedWire":
+                    return MyPlayer.NumOfWires > 0;
+                case "Mine":
+                    return MyPlayer.NumOfMines > 0;
+                case "TankBarrier":
+                    return MyPlayer.NumOfTankBarriers > 0;
+                case "Bomber": break;
+                default:
+                    Debug.Log(element.tag + "is not between cases");
+                    break;
+            }
+            return false;
         }
-        return closestCollider.gameObject;
+
+        private void UseThatElement(GameObject element)
+        {
+            Debug.Log("Using " + element.tag );
+            switch (element.tag)
+            {
+                case "BarbedWire":
+                    MyPlayer.UseBarbedWire();
+                    break;
+                case "Mine":
+                    MyPlayer.UseMine();
+                    break;
+                case "TankBarrier":
+                    MyPlayer.UseTankBarrier();
+                    break;
+                case "Bomber": break;
+                default:
+                    Debug.Log(element.tag + "is not between cases");
+                    break;
+            }
+        }
+
+        
+
+        private GameObject GetElementToInstantiate()
+        {
+            GameObject result = null;
+            if (Elements.Length > SelectedButtonIndex)
+            {
+                result = Elements[SelectedButtonIndex];
+            }
+            return result;
+        }
+
+        private GameObject GetClosestObject(RaycastHit hit)
+        {
+            Collider closestCollider = null;
+        
+            Collider[] colliders = Physics.OverlapBox(hit.point, new Vector3(0.5f, 0.5f, 0.5f));
+            
+            foreach (var c in colliders)
+            {
+                if (c.gameObject.tag != "Floor")
+                {
+                    if (closestCollider == null)
+                    {
+                        closestCollider = c;
+                    }
+
+                    if (Vector3.Distance(hit.point, c.gameObject.transform.position) <=
+                        Vector3.Distance(hit.point, closestCollider.transform.position))
+                    {
+                        closestCollider = c;
+                    }
+                }
+
+            }
+            if (closestCollider != null)
+            {
+                //Debug.Log("closest object is " + closestCollider.gameObject.tag + " pos "+ closestCollider.gameObject.transform.position);
+                return closestCollider.gameObject;
+            }
+            return null;
+        }
     }
 }
