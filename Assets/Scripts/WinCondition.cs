@@ -8,11 +8,11 @@ public class WinCondition : MonoBehaviour
 {
     public UnityEvent GameWon;
 
-    private List<EnemyManager> m_enemyManagers;
+    private List<EnemyManager> _mEnemyManagers;
 
     void Start()
     {
-        m_enemyManagers = FindObjectsOfType<EnemyManager>().ToList();
+        _mEnemyManagers = FindObjectsOfType<EnemyManager>().ToList();
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class WinCondition : MonoBehaviour
 
     bool AllUnitsHaveBeenSpawned()
     {
-        foreach(var enemyManager in m_enemyManagers)
+        foreach(var enemyManager in _mEnemyManagers)
         {
             if (enemyManager.NumberOfEnemies > 0)
             {
