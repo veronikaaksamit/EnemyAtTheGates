@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -8,6 +9,7 @@ namespace Assets.Scripts
     public class NewElementManager : MonoBehaviour
     {
         public Player MyPlayer;
+        public UnityEvent CheckButtons;
         public GameObject[] Elements;
         public int SelectedButtonIndex = 10;
         
@@ -83,6 +85,10 @@ namespace Assets.Scripts
                 created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                 //Debug.Log("Using " + element.tag);
                 UseThatElement(element);
+                if (CheckButtons != null)
+                {
+                    CheckButtons.Invoke();
+                }
 
             }
             return created;

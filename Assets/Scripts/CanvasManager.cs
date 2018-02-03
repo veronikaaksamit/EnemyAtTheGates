@@ -7,14 +7,16 @@ namespace Assets.Scripts
     {
 
         public Player Player;
+        private Button[] buttons;
+
         // Use this for initialization
         void Start () {
-		
+		    buttons = this.GetComponentsInChildren<Button>();
         }
 	
-        void FixedUpdate()
+        public void UpdateButtons()
         {
-            /*Button[] buttons = this.GetComponentsInChildren<Button>(true);
+             
             Debug.Log("Number of buttons is" + buttons.Length);
 
             for (int i = 0; i < buttons.Length; i++)
@@ -28,26 +30,26 @@ namespace Assets.Scripts
                     case "BarbedWire":
                         if (Player.NumOfWires <= 0)
                         {
-                            buttons[i].gameObject.SetActive(enabled = false);
+                            buttons[i].enabled = false;
                         }
                         break;
                     case "Mine":
                         if (Player.NumOfMines <= 0)
                         {
-                            buttons[i].gameObject.SetActive(enabled = false);
+                            buttons[i].enabled = false;
                         }
                         break;
                     case "TankBarrier":
                         if (Player.NumOfTankBarriers <= 0)
                         {
-                            buttons[i].gameObject.SetActive(enabled = false);
+                            buttons[i].enabled = false;
                         }
                         break;
                     case "Bomber": break;
                     default: Debug.Log(buttons[i].tag + "is not between cases");
                         break;
                 }
-            }*/
+            }
         }
     }
 }
