@@ -41,7 +41,7 @@ GameObject:
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967291
   m_IsActive: 1
 --- !u!1 &1742543470269132
 GameObject:
@@ -59,7 +59,7 @@ GameObject:
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967291
   m_IsActive: 1
 --- !u!4 &4163214592891994
 Transform:

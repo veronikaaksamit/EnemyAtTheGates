@@ -10,7 +10,7 @@ using UnityEngine.SocialPlatforms;
 public class PlayerInfantry : MonoBehaviour, IPlayerUnit
 {
     [SerializeField] private float m_reloadTimeInS = 1.0f;
-    [SerializeField] private int m_damagePerShot = 1;
+    [SerializeField] private float m_damagePerShot = 10.0f;
     [SerializeField] private float m_range = 1.0f;
     [SerializeField] private int m_experience = 0;
     [SerializeField] private float m_accuracy = 0.9f;
@@ -23,9 +23,9 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
         TryShootAt(closestOpposingUnit);
     }
 
-    public void SetPosition(Vector3 newPosition)
+    public UnitType GetUnitType()
     {
-        transform.position = newPosition;
+        return UnitType.Infatryman;
     }
 
     private void TryShootAt(IEnemyUnit target)

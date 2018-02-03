@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IPlayerUnit
 {
-    void SetPosition(Vector3 newPosition);
+    UnitType GetUnitType();
 }

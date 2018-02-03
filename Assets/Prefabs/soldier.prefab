@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 23720127580823218}
   - component: {fileID: 195403635019718640}
   - component: {fileID: 114769157909085104}
+  - component: {fileID: 114207510364367336}
   m_Layer: 8
   m_Name: soldier
   m_TagString: Enemy
@@ -124,6 +125,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114207510364367336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323341215647832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlockadeTag: TankBarrier
+  TimeToDestroy: 5
 --- !u!114 &114769157909085104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb3fc20264445f48985b76bb50b2d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementEnabled: 1
 --- !u!195 &195403635019718640
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -142,8 +157,8 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323341215647832}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.7
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

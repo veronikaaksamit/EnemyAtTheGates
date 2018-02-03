@@ -15,6 +15,7 @@ TagManager:
   - MachineGun
   - Sniper
   - Bomber
+  - Navigation
   layers:
   - Default
   - TransparentFX

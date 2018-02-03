@@ -136,13 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bb3fc20264445f48985b76bb50b2d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementEnabled: 1
 --- !u!114 &114981904433678268
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850889979343084}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24d87d83c0511b84aaa8da67b3e80fec, type: 3}
   m_Name: 
@@ -157,7 +158,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1850889979343084}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.5
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
