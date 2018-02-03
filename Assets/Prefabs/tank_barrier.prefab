@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 4
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967291
   m_IsActive: 1
 --- !u!1 &1452278606816764
 GameObject:
@@ -38,12 +38,14 @@ GameObject:
   - component: {fileID: 33349824166228460}
   - component: {fileID: 65743408358102470}
   - component: {fileID: 23235172370102904}
+  - component: {fileID: 114283047903308524}
+  - component: {fileID: 114398283166181296}
   m_Layer: 9
   m_Name: tank_barrier
   m_TagString: TankBarrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 4
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967291
   m_IsActive: 1
 --- !u!4 &4670041520838424
 Transform:
@@ -122,6 +124,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.2, z: 1.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114283047903308524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452278606816764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 4
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: 00000000
+--- !u!114 &114398283166181296
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1452278606816764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4da95e57a316e646932b124ee17e57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212390534882433556
 SpriteRenderer:
   m_ObjectHideFlags: 1
