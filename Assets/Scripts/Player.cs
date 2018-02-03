@@ -56,19 +56,19 @@ namespace Assets.Scripts
         public void UseMine()
         {
             --this.NumOfMines;
-            Debug.Log("Number of mines "+ NumOfMines);
+            //Debug.Log("Number of mines "+ NumOfMines);
         }
 
         public void UseTankBarrier()
         {
             --this.NumOfTankBarriers;
-            Debug.Log("Number of TankBarrier " + NumOfTankBarriers);
+            //Debug.Log("Number of TankBarrier " + NumOfTankBarriers);
         }
 
         public void UseBarbedWire()
         {
             --this.NumOfWires;
-            Debug.Log("Number of BarbedWire " + NumOfWires);
+            //Debug.Log("Number of BarbedWire " + NumOfWires);
         }
 
         //TODO: bombarder??
