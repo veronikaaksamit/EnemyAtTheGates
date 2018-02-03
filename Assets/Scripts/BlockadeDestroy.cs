@@ -6,7 +6,9 @@ using UnityEngine.AI;
 
 public class BlockadeDestroy : MonoBehaviour
 {
-    private List<EnemyMovement> destroyersMovement = new List<EnemyMovement>();
+    private List<GameObject> destroyers = new List<GameObject>();
+    private const float START_PERCENTAGE = 100f;
+    private float remainsPercentage = START_PERCENTAGE;
 
     void Start()
     { }
@@ -15,28 +17,63 @@ public class BlockadeDestroy : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            EnemyDestroyBlockade component = other.gameObject.GetComponent<EnemyDestroyBlockade>();
-            if (component != null && component.BlockadeTag == tag)
+            foreach (EnemyDestroyBlockade component in other.gameObject.GetComponents<EnemyDestroyBlockade>())
             {
-                EnemyMovement movement = other.gameObject.GetComponent<EnemyMovement>();
-                movement.movementEnabled = false;
-                if (destroyersMovement.Count == 0)
+                if (component != null && component.BlockadeTag == tag)
                 {
-                    Invoke("DestroyBlockade", component.TimeToDestroy);
+                    GameObject enemy = other.gameObject;
+                    enemy.GetComponent<EnemyMovement>().movementEnabled = false;
+                    destroyers.Add(enemy);
+                    break;
                 }
-                destroyersMovement.Add(movement);
             }
         }
     }
 
     void DestroyBlockade()
     {
-        foreach (EnemyMovement enemyMovement in destroyersMovement)
+        foreach (GameObject enemy in destroyers)
         {
-            enemyMovement.movementEnabled = true;
+            if (enemy != null && !enemy.Equals(null))
+            {
+                enemy.GetComponent<EnemyMovement>().movementEnabled = true;
+            }
         }
-        destroyersMovement.Clear();
+        destroyers.Clear();
         Destroy(gameObject);
         GameObject.FindGameObjectWithTag("Navigation").GetComponent<NavMeshBaker>().BakeNavMesh();
+    }
+
+    void Update()
+    {
+        foreach (GameObject enemy in destroyers)
+        {
+            if (enemy == null || enemy.Equals(null))
+            {
+                destroyers.Remove(enemy);
+            }
+            else
+            {
+                foreach (EnemyDestroyBlockade attack in enemy.GetComponents<EnemyDestroyBlockade>())
+                {
+                    if (attack.BlockadeTag == tag)
+                    {
+                        if (attack.TimeToDestroy <= 0)
+                        {
+                            remainsPercentage = 0;
+                        }
+                        else
+                        {
+                            remainsPercentage -= START_PERCENTAGE / attack.TimeToDestroy * Time.deltaTime;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+        if (remainsPercentage <= 0)
+        {
+            DestroyBlockade();
+        }
     }
 }

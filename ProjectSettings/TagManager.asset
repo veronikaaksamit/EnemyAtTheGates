@@ -19,6 +19,7 @@ TagManager:
   - ManPower
   - Munition
   - Weapons
+  - Barricade
   layers:
   - Default
   - TransparentFX
