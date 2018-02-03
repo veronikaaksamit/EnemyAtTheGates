@@ -81,7 +81,7 @@ namespace Assets.Scripts
             if (CanUseThatElement(element))
             {
                 created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                Debug.Log("Using " + element.tag);
+                //Debug.Log("Using " + element.tag);
                 UseThatElement(element);
 
             }
