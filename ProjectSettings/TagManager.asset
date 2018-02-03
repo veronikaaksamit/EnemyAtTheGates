@@ -16,6 +16,7 @@ TagManager:
   - Sniper
   - Bomber
   - Navigation
+  - Gold
   layers:
   - Default
   - TransparentFX
