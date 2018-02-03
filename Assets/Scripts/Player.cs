@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -32,6 +33,24 @@ namespace Assets.Scripts
                 Resources[0].Count += ManpowerIncomePerS;
                 m_lastManpowerIncomeTime = Time.time;
             }
+        }
+
+        public int GetManPowerValue()
+        {
+            return Resources.Where(a => a.Type == GameResourcesType.Manpower)
+                .Select(b => b.Count).FirstOrDefault(); 
+        }
+
+        public int GetWeaponsValue()
+        {
+            return Resources.Where(a => a.Type == GameResourcesType.Weapons)
+                .Select(b => b.Count).FirstOrDefault();
+        }
+
+        public int GetTankMunitionValue()
+        {
+            return Resources.Where(a => a.Type == GameResourcesType.TankMunition)
+                .Select(b => b.Count).FirstOrDefault();
         }
 
         public void UseMine()
