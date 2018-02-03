@@ -107,6 +107,7 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+  m_NavMeshData: {fileID: 0}
   m_NavMeshData: {fileID: 23800000, guid: e187f64e67c1d004e861bb37aeca31fd, type: 2}
 --- !u!1 &9638295
 GameObject:
@@ -635,7 +636,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4340643364897200, guid: 2e3a6813cc46d6f4d8cfd3bac6365ca3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.39
+      value: 0.212
       objectReference: {fileID: 0}
     - target: {fileID: 4340643364897200, guid: 2e3a6813cc46d6f4d8cfd3bac6365ca3, type: 2}
       propertyPath: m_LocalPosition.z
@@ -714,7 +715,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0.212
       objectReference: {fileID: 0}
     - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3217,7 +3218,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.096666664
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: ca50139815ec06c458509472ea53d397, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 85e95d6546eda9849bf3e81501ab5b28, type: 2}
 --- !u!114 &829645398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3245,7 +3246,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.093333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 29c81293fc56f2f4887f670155429802, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5dc80c5e7fc147b45a067a094f744e72, type: 2}
 --- !u!4 &829645399
 Transform:
   m_ObjectHideFlags: 0
@@ -6424,14 +6425,14 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4085111504038698, guid: 5f8bb25808e079c458bacc211f9e858d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 65328113818073890, guid: 5f8bb25808e079c458bacc211f9e858d,
         type: 2}
       propertyPath: m_Size.x
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085111504038698, guid: 5f8bb25808e079c458bacc211f9e858d, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f8bb25808e079c458bacc211f9e858d, type: 2}
@@ -6861,10 +6862,6 @@ Prefab:
     - target: {fileID: 1452278606816764, guid: d618a492590e53a4387888a5e39290bc, type: 2}
       propertyPath: m_Name
       value: TankBarrier3D
-      objectReference: {fileID: 0}
-    - target: {fileID: 4773294067910078, guid: d618a492590e53a4387888a5e39290bc, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d618a492590e53a4387888a5e39290bc, type: 2}
