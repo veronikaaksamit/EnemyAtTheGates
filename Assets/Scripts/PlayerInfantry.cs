@@ -56,6 +56,7 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
         Bullet firedBullet = Instantiate(m_bulletToFire);
         firedBullet.damage = m_damagePerShot;
         firedBullet.firedFrom = this;
+        firedBullet.accuracy = m_accuracy;
         firedBullet.transform.position = transform.position;
         firedBullet.transform.LookAt(target.GetPosition());
         firedBullet.GetComponent<Rigidbody>().velocity =

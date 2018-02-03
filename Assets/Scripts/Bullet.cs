@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     // remember to set these when firing
     public float damage = -1;
     public IPlayerUnit firedFrom;
+    public float accuracy = 1.0f;
 
     void OnCollisionEnter(Collision collision)
     {
