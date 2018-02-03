@@ -19,7 +19,12 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        hitUnit.TakeDamage(damage, firedFrom);
+        bool hits = UnityEngine.Random.Range(0.0f, 1.0f) < accuracy;
+        if (hits)
+        {
+            hitUnit.TakeDamage(damage, firedFrom);
+        }
+        
         Destroy(gameObject);
     }
 
