@@ -12,13 +12,4 @@ public class NavMeshBaker : MonoBehaviour
             surface.BuildNavMesh();
         }
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            BakeNavMesh();
-            Debug.Log("NavMesh pregenerovan");
-        }
-    }
 }

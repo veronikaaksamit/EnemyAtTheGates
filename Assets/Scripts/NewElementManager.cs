@@ -35,20 +35,32 @@ public class NewElementManager : MonoBehaviour
                     if (Elements.Length > 0)
                     {
                         GameObject element = GetElementToInstantiate();
+                        GameObject created = null;
                         if (element != null)
                         {
+                            GameObject closestObject = GetClosestObject(hit);
+
                             if (hit.collider.gameObject.tag == "House" && selectedButtonIndex > 2)
                             {
                                 GameObject house = hit.collider.gameObject;
                                 Vector3 position = house.transform.position;
-                                //Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                                Instantiate(element, position, Quaternion.identity);
+                                created = Instantiate(element, position, Quaternion.identity);
                             }
-                            else
+
+                            if (hit.collider.gameObject.tag == "Floor" && selectedButtonIndex < 3)
                             {
-                                if (selectedButtonIndex < 3)
+                                created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
+                            }
+
+                            GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
+                            selectedButtonIndex = 10;
+
+                            if (created != null)
+                            {
+                                
+                                if (closestObject.GetComponent<Collider>().bounds.Intersects(created.GetComponent<Collider>().bounds))
                                 {
-                                    Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
+                                    Debug.Log("Bounds intersecting " + closestObject.tag );
                                 }
                             }
                         }
@@ -67,9 +79,37 @@ public class NewElementManager : MonoBehaviour
         if (Elements.Length > selectedButtonIndex)
         {
             result = Elements[selectedButtonIndex];
-            GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-            selectedButtonIndex = 10;
         }
         return result;
+    }
+
+    private GameObject GetClosestObject(RaycastHit hit)
+    {
+        Collider closestCollider = null;
+        
+        Collider[] colliders = Physics.OverlapBox(hit.point, new Vector3(0.5f, 0.5f, 0.5f));
+            
+        foreach (var c in colliders)
+        {
+            if (c.gameObject.tag != "Floor")
+            {
+                if (closestCollider == null)
+                {
+                    closestCollider = c;
+                }
+
+                if (Vector3.Distance(hit.point, c.gameObject.transform.position) <=
+                    Vector3.Distance(hit.point, closestCollider.transform.position))
+                {
+                    closestCollider = c;
+                }
+            }
+
+        }
+        if (closestCollider != null)
+        {
+            Debug.Log("closest object is " + closestCollider.gameObject.tag + " pos "+ closestCollider.gameObject.transform.position);
+        }
+        return closestCollider.gameObject;
     }
 }

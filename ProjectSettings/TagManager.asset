@@ -11,6 +11,10 @@ TagManager:
   - BarbedWire
   - Mine
   - AntiAircraftW
+  - Floor
+  - MachineGun
+  - Sniper
+  - Bomber
   - Navigation
   layers:
   - Default
