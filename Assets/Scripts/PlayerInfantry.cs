@@ -9,6 +9,8 @@ using UnityEngine.SocialPlatforms;
 [System.Serializable]
 public class PlayerInfantry : MonoBehaviour, IPlayerUnit
 {
+    [SerializeField] private Bullet m_bulletToFire;
+    [SerializeField] private float m_velocityToFireWith = 1.0f;
     [SerializeField] private float m_reloadTimeInS = 1.0f;
     [SerializeField] private float m_damagePerShot = 10.0f;
     [SerializeField] private float m_range = 1.0f;
@@ -39,18 +41,27 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
             return;
         }
 
-        bool hits = UnityEngine.Random.Range(0.0f, 1.0f) < m_accuracy;
+        //bool hits = UnityEngine.Random.Range(0.0f, 1.0f) < m_accuracy;
 
-        if (hits)
-        {
-            target.TakeDamage(m_damagePerShot, this);
+        //if (hits)
+        //{
+        //    target.TakeDamage(m_damagePerShot, this);
 
-            if (target.GetHealth() <= 0)
-            {
-                ++m_experience;
-            }
-        }
-        
+        //    if (target.GetHealth() <= 0)
+        //    {
+        //        ++m_experience;
+        //    }
+        //}
+
+        Bullet firedBullet = Instantiate(m_bulletToFire);
+        firedBullet.damage = m_damagePerShot;
+        firedBullet.firedFrom = this;
+        firedBullet.transform.position = transform.position;
+        firedBullet.transform.LookAt(target.GetPosition());
+        firedBullet.GetComponent<Rigidbody>().velocity =
+            firedBullet.transform.forward * m_velocityToFireWith;
+        Physics.IgnoreCollision(firedBullet.GetComponent<Collider>(), GetComponent<Collider>());
+
         m_timeSinceLastShotInS = Time.time;
     }
 }

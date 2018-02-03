@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4163214592891994}
   - component: {fileID: 212233059110241142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: sniperSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4952200867303736}
   - component: {fileID: 212842431368946420}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: niceHouse
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 65842221374415300}
   - component: {fileID: 23442414127087906}
   - component: {fileID: 114835473234051444}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: houseWithSniper
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -166,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c364443c2e6af4d8bf96888c9b988b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bulletToFire: {fileID: 114211853269994008, guid: 26f9cfd53ad9ff042a743cca8657f8eb,
+    type: 2}
+  m_velocityToFireWith: 10
   m_reloadTimeInS: 1
   m_damagePerShot: 10
   m_range: 1

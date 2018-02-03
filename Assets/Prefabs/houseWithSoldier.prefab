@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4955466524435428}
   - component: {fileID: 212623205252384788}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: niceHouse
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65860833636322678}
   - component: {fileID: 23750818390526886}
   - component: {fileID: 114030833875641784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: houseWithSoldier
   m_TagString: House
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4357512354237696}
   - component: {fileID: 212763277208616688}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SoldierSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,6 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c364443c2e6af4d8bf96888c9b988b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bulletToFire: {fileID: 114211853269994008, guid: 26f9cfd53ad9ff042a743cca8657f8eb,
+    type: 2}
+  m_velocityToFireWith: 8
   m_reloadTimeInS: 0.5
   m_damagePerShot: 3
   m_range: 1
