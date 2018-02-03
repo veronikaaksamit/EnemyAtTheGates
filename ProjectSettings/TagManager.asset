@@ -16,7 +16,9 @@ TagManager:
   - Sniper
   - Bomber
   - Navigation
-  - Gold
+  - ManPower
+  - Munition
+  - Weapons
   layers:
   - Default
   - TransparentFX

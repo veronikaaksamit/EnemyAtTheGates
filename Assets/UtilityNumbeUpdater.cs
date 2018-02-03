@@ -38,7 +38,15 @@ public class UtilityNumbeUpdater : MonoBehaviour
                 case "TankBarrier":
                     texts[i].text = MyPlayer.NumOfTankBarriers.ToString();
                     break;
-                case "Gold": break;
+                case "ManPower":
+                    texts[i].text = MyPlayer.GetManPowerValue().ToString();
+                    break;
+                case "Munition":
+                    texts[i].text = MyPlayer.GetTankMunitionValue().ToString();
+                    break;
+                case "Weapons":
+                    texts[i].text = MyPlayer.GetWeaponsValue().ToString();
+                    break;
                 default:
                     Debug.Log(texts[i].tag + "is not between cases");
                     break;
