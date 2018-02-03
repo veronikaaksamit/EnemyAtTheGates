@@ -7,7 +7,8 @@ public static class UnitUtils{
     public static IEnumerable<IEnemyUnit> GetEnemyUnitsInRadius(Vector3 center, float range)
     {
         var unitsCollisionLayer = LayerMask.NameToLayer("EnemyUnit");
-        var unitCollidersInRadius = Physics.OverlapSphere(center, range, unitsCollisionLayer);
+        int layerMask = 1 << unitsCollisionLayer;
+        var unitCollidersInRadius = Physics.OverlapSphere(center, range, layerMask);
 
         return unitCollidersInRadius.Select(collider => collider.GetComponent<IEnemyUnit>());
     }
@@ -15,6 +16,16 @@ public static class UnitUtils{
     public static IEnemyUnit GetClosesEnemyUnitInRange(Vector3 center, float range)
     {
         var enemyUnitsInRange = UnitUtils.GetEnemyUnitsInRadius(center, range);
+
+        if (enemyUnitsInRange.Count() <= 0)
+        {
+            return null;
+        }
+
+        if (enemyUnitsInRange.Count() == 1)
+        {
+            return enemyUnitsInRange.First();
+        }
 
         return enemyUnitsInRange.Aggregate(
             (l, r) =>

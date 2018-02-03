@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyInfantry : MonoBehaviour, IEnemyUnit {
 
     [SerializeField]
-    private float m_health = 50.0f;
+    private float m_health = 10.0f;
 
 
     void Update()
     {
         if (m_health <= 0.0f)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

@@ -17,7 +17,7 @@ public class EnemyTank : MonoBehaviour, IEnemyUnit
     {
         if(m_health <= 0.0f)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 

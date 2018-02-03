@@ -20,7 +20,11 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
     void Update()
     {
         var closestOpposingUnit = UnitUtils.GetClosesEnemyUnitInRange(transform.position, m_range);
-        TryShootAt(closestOpposingUnit);
+
+        if (closestOpposingUnit != null)
+        {
+            TryShootAt(closestOpposingUnit);
+        }
     }
 
     public UnitType GetUnitType()
