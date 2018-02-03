@@ -13,6 +13,9 @@ namespace Assets.Scripts
         public GameObject MachineGunNestPrefab;
         public GameObject TankPrefab;
 
+        public int ManpowerIncomePerS = 1;
+        private float m_lastManpowerIncomeTime = 0.0f;
+
         public GameResources[] Resources = 
         {
             new GameResources(GameResourcesType.Manpower, 0),
@@ -21,6 +24,15 @@ namespace Assets.Scripts
         };
 
         public IBlockade[] AvailableBlockades;
+
+        void Update()
+        {
+            if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= 1.0f)
+            {
+                Resources[0].Count += ManpowerIncomePerS;
+                m_lastManpowerIncomeTime = Time.time;
+            }
+        }
 
         public void UseMine()
         {
