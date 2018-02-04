@@ -118,10 +118,10 @@ namespace Assets.Scripts
         private bool CanUseThatElement()
         {
             bool canUse = MyPlayer.CanUseThatElement(SelectedButtonTag);
-            if (!canUse)
+            /*if (!canUse)
             {
                 Debug.Log("Can not use "+ SelectedButtonTag);
-            }
+            }*/
             return canUse;
         }
 
