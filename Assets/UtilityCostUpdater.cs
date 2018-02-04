@@ -21,7 +21,10 @@ namespace Assets
 
         public void UpdateTexts(String tag)
         {
-            //Debug.Log("called with tag " + tag);
+            if (tag == null)
+            {
+                Debug.Log("called with tag null");
+            }
             //Debug.Log("number of texts in UCUpdater "+ texts.Length);
             GameResources[] resources = MyPlayer.GetValueOfUtility(tag);
             

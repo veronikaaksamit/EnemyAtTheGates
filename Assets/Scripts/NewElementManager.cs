@@ -105,7 +105,7 @@ namespace Assets.Scripts
                 case "BarbedWire":
                 case "Mine":
                 case "TankBarrier":
-                case "Barrier": return true;
+                case "Barricade": return true;
                 case "Soldier":
                 case "Sniper":
                 case "MachineGun":

@@ -24,7 +24,6 @@ TagManager:
   - CityHall
   - AircraftFloor
   - AircraftSpawnPoint
-  - Barrier
   layers:
   - Default
   - TransparentFX

@@ -36,8 +36,8 @@ namespace Assets.Scripts
                     case "TankBarrier":
                         texts[i].text = MyPlayer.NumOfTankBarriers.ToString();
                         break;
-                    case "Barrier":
-                        texts[i].text = MyPlayer.NumOfBarriers.ToString();
+                    case "Barricade":
+                        texts[i].text = MyPlayer.NumOfBarricades.ToString();
                         break;
                     case "ManPower":
                         texts[i].text = MyPlayer.GetManPowerValue().ToString();

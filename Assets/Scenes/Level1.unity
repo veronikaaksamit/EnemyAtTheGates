@@ -2051,8 +2051,8 @@ GameObject:
   - component: {fileID: 393245260}
   - component: {fileID: 393245259}
   m_Layer: 5
-  m_Name: BarrierButton
-  m_TagString: Bomber
+  m_Name: BarricadeButton
+  m_TagString: Barricade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2123,18 +2123,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1246122521}
-        m_MethodName: UpdateTexts
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Bomber
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1462427434}
         m_MethodName: SetSelectedButtonTag
@@ -2144,7 +2133,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Bomber
+          m_StringArgument: Barricade
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4722,8 +4711,8 @@ GameObject:
   - component: {fileID: 856466940}
   - component: {fileID: 856466939}
   m_Layer: 5
-  m_Name: BarrierText
-  m_TagString: Barrier
+  m_Name: BarricadeText
+  m_TagString: Barricade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7893,6 +7882,16 @@ Prefab:
       propertyPath: Costs.Array.data[3]
       value: 
       objectReference: {fileID: 1732489242}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: NumOfBarriers
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: NumOfBarricades
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
   m_IsPrefabParent: 0
@@ -7992,6 +7991,7 @@ MonoBehaviour:
   - {fileID: 1742543470269132, guid: 4e300c60f74a5e64eb76f1f12a2f77d9, type: 2}
   - {fileID: 1293553600594214, guid: fe0b778b7f9a83647b413b42e2db3a11, type: 2}
   - {fileID: 1387245949369504, guid: 3b9c7637621043b49b0e32b1fa2a047b, type: 2}
+  - {fileID: 1492025994611024, guid: e0e0de3a04566434e9668dfc7755b800, type: 2}
 --- !u!4 &1462427435
 Transform:
   m_ObjectHideFlags: 0
@@ -10038,7 +10038,7 @@ GameObject:
   - component: {fileID: 1920997724}
   - component: {fileID: 1920997723}
   m_Layer: 5
-  m_Name: BarrierImage
+  m_Name: BarricadeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
