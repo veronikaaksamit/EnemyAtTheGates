@@ -12,11 +12,11 @@ NavMeshProjectSettings:
   - name: Jump
     cost: 2
   - name: BarbedWire
-    cost: 1000
+    cost: 10
   - name: TankBarrier
-    cost: 1000
+    cost: 10
   - name: Blockade
-    cost: 1000
+    cost: 10
   - name: 
     cost: 1
   - name: 
