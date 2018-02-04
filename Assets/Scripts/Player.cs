@@ -251,8 +251,6 @@ namespace Assets.Scripts
                     break;
                     
             }
-
-            //TODO: bombarder??
         }
     }
 }
