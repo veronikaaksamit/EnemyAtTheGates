@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,8 +12,10 @@ namespace Assets.Scripts
         public Player MyPlayer;
         public UnityEvent CheckButtons;
         public GameObject[] Elements;
-        public int SelectedButtonIndex = 10;
-        
+        //public int SelectedButtonIndex = 10;
+
+        private String SelectedButtonTag = "";
+
 
         void Start ()
         {
@@ -39,7 +42,7 @@ namespace Assets.Scripts
                             {
                                 GameObject closestObject = GetClosestObject(hit);
 
-                                if (hit.collider.gameObject.tag == "House" && SelectedButtonIndex > 2)
+                                if (hit.collider.gameObject.tag == "House" /*&& SelectedButtonIndex > 2*/ && !IsBarrier())
                                 {
                                     GameObject house = hit.collider.gameObject;
                                     Vector3 position = house.transform.position;
@@ -47,13 +50,13 @@ namespace Assets.Scripts
                                     created = Instantiate(element, position, Quaternion.identity);
                                 }
 
-                                if (hit.collider.gameObject.tag == "Floor" && SelectedButtonIndex < 3)
+                                if (hit.collider.gameObject.tag == "Floor" /*&& SelectedButtonIndex < 3 */&& IsBarrier())
                                 {
                                     created = InstantiateElement(element, hit);
                                 }
 
                                 GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-                                SelectedButtonIndex = 10;
+                                //SelectedButtonIndex = 10;
 
                                 if (created != null && closestObject != null)
                                 {
@@ -74,7 +77,12 @@ namespace Assets.Scripts
 
         public void SetSelectedButtonIndex(int selectedButton)
         {
-            SelectedButtonIndex = selectedButton;
+            //SelectedButtonIndex = selectedButton;
+        }
+
+        public void SetSelectedButtonTag(String newItemTag)
+        {
+            SelectedButtonTag = newItemTag;
         }
 
         private GameObject InstantiateElement(GameObject element, RaycastHit hit)
@@ -92,6 +100,24 @@ namespace Assets.Scripts
 
             }
             return created;
+        }
+
+        private bool IsBarrier()
+        {
+            switch (SelectedButtonTag)
+            {
+                case "BarbedWire":
+                case "Mine":
+                case "TankBarrier":
+                case "Barrier": return true;
+                case "Soldier":
+                case "Sniper":
+                case "MachineGun":
+                case "AntiAircraftW": return false;
+                    default: Debug.Log(SelectedButtonTag + " is not stated in IsBarrier");
+                        break;
+            }
+            return false;
         }
 
         private bool CanUseThatElement(GameObject element)
@@ -115,7 +141,6 @@ namespace Assets.Scripts
 
         private void UseThatElement(GameObject element)
         {
-            Debug.Log("Using " + element.tag );
             switch (element.tag)
             {
                 case "BarbedWire":
@@ -139,10 +164,33 @@ namespace Assets.Scripts
         private GameObject GetElementToInstantiate()
         {
             GameObject result = null;
-            if (Elements.Length > SelectedButtonIndex)
+            for (int i = 0; i < Elements.Length; i++)
+            {
+                if (Elements[i].tag == SelectedButtonTag)
+                {
+                    result = Elements[i];
+                }
+                if (Elements[i].tag == "House")
+                {
+                    SpriteRenderer[] sprites = Elements[i].GetComponentsInChildren<SpriteRenderer>();
+                    for (int j = 0; j < sprites.Length; j++)
+                    {
+                        if (sprites[j].tag!= "Untagged" && sprites[j].tag == SelectedButtonTag)
+                        {
+                            return Elements[i];
+                        }
+                    }
+                }
+            }
+            if (result == null)
+            {
+                Debug.Log("Problem with tag"+ SelectedButtonTag);
+            }
+
+            /*if (Elements.Length > SelectedButtonIndex)
             {
                 result = Elements[SelectedButtonIndex];
-            }
+            }*/
             return result;
         }
 
