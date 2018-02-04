@@ -39,12 +39,16 @@ namespace Assets.Scripts
                             {
                                 GameObject closestObject = GetClosestObject(hit);
 
-                                if (hit.collider.gameObject.tag == "House" && !IsBarrier())
+                                if (hit.collider.gameObject.tag == "House" && !IsBarrier() )
                                 {
-                                    GameObject house = hit.collider.gameObject;
-                                    Vector3 position = house.transform.position;
-                                    Destroy(hit.collider.gameObject);
-                                    created = Instantiate(element, position, Quaternion.identity);
+                                    if (CanUseThatElement())
+                                    {
+                                        GameObject house = hit.collider.gameObject;
+                                        Vector3 position = house.transform.position;
+                                        Destroy(hit.collider.gameObject);
+                                        created = Instantiate(element, position, Quaternion.identity);
+                                        UseThatElement();
+                                    }
                                 }
 
                                 if (hit.collider.gameObject.tag == "Floor" && IsBarrier())
@@ -79,11 +83,11 @@ namespace Assets.Scripts
         private GameObject InstantiateElement(GameObject element, RaycastHit hit)
         {
             GameObject created = null;
-            if (CanUseThatElement(element))
+            if (CanUseThatElement())
             {
                 created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
                 
-                UseThatElement(element);
+                UseThatElement();
                 if (CheckButtons != null)
                 {
                     CheckButtons.Invoke();
@@ -111,14 +115,19 @@ namespace Assets.Scripts
             return false;
         }
 
-        private bool CanUseThatElement(GameObject element)
+        private bool CanUseThatElement()
         {
-            return MyPlayer.CanUseThatElement(element.tag);
+            bool canUse = MyPlayer.CanUseThatElement(SelectedButtonTag);
+            if (!canUse)
+            {
+                Debug.Log("Can not use "+ SelectedButtonTag);
+            }
+            return canUse;
         }
 
-        private void UseThatElement(GameObject element)
+        private void UseThatElement()
         {
-            MyPlayer.CanUseThatElement(element.tag);
+            MyPlayer.UseThatElement(SelectedButtonTag);
         }
         
 
