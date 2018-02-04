@@ -7768,11 +7768,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: Costs.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4093981682189536, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7807,70 +7802,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
-      propertyPath: NumOfMines
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: NumOfTankBarriers
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: NumOfWires
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: Resources.Array.data[0].Count
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: Resources.Array.data[1].Count
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: Resources.Array.data[2].Count
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: MachineGunNestPrefab
-      value: 
-      objectReference: {fileID: 1293553600594214, guid: fe0b778b7f9a83647b413b42e2db3a11,
-        type: 2}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: SniperPrefab
-      value: 
-      objectReference: {fileID: 1742543470269132, guid: 4e300c60f74a5e64eb76f1f12a2f77d9,
-        type: 2}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: InfantrymanPrefab
-      value: 
-      objectReference: {fileID: 1387245949369504, guid: 3b9c7637621043b49b0e32b1fa2a047b,
-        type: 2}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: AntiAircraftWarfarePrefab
-      value: 
-      objectReference: {fileID: 1826235702829612, guid: dbc0da3e6a302254d93d5128e2953fac,
-        type: 2}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: Costs.Array.data[4]
-      value: 
-      objectReference: {fileID: 708663870}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
       propertyPath: Costs.Array.data[0]
       value: 
       objectReference: {fileID: 1853351064}
@@ -7891,14 +7822,9 @@ Prefab:
       objectReference: {fileID: 1732489242}
     - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
         type: 2}
-      propertyPath: NumOfBarriers
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
-        type: 2}
-      propertyPath: NumOfBarricades
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: Costs.Array.data[4]
+      value: 
+      objectReference: {fileID: 708663870}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
   m_IsPrefabParent: 0

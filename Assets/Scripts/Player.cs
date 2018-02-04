@@ -19,7 +19,8 @@ namespace Assets.Scripts
 
         public GameObject[] Costs;
 
-        public int ManpowerIncomePerS = 1;
+        public int ManpowerIncomePerPeriod = 1;
+        public float ManpowerIncomePeriodInS = 5;
         private float m_lastManpowerIncomeTime = 0.0f;
 
         public GameResources[] Resources =
@@ -38,9 +39,9 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= 1.0f)
+            if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= ManpowerIncomePeriodInS)
             {
-                Resources[0].Count += ManpowerIncomePerS;
+                Resources[0].Count += ManpowerIncomePerPeriod;
                 m_lastManpowerIncomeTime = Time.time;
             }
         }
