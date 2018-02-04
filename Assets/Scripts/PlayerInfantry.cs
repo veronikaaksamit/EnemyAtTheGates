@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
-//TODO: experience bonuses
-
 [System.Serializable]
 public class PlayerInfantry : MonoBehaviour, IPlayerUnit
 {
@@ -16,6 +14,7 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
     [SerializeField] private float m_range = 1.0f;
     [SerializeField] private int m_experience = 0;
     [SerializeField] private float m_accuracy = 0.9f;
+    [SerializeField] private float m_shootsToDouble = 500f;
 
     private float m_timeSinceLastShotInS;
 
@@ -54,7 +53,7 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
         //}
 
         Bullet firedBullet = Instantiate(m_bulletToFire);
-        firedBullet.damage = m_damagePerShot;
+        firedBullet.damage = m_damagePerShot * (1 + m_experience / m_shootsToDouble);
         firedBullet.firedFrom = this;
         firedBullet.accuracy = m_accuracy;
         firedBullet.transform.position = transform.position;
@@ -64,5 +63,6 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
         Physics.IgnoreCollision(firedBullet.GetComponent<Collider>(), GetComponent<Collider>());
 
         m_timeSinceLastShotInS = Time.time;
+        m_experience++;
     }
 }
