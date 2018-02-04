@@ -4206,6 +4206,7 @@ GameObject:
   - component: {fileID: 829645398}
   - component: {fileID: 829645397}
   - component: {fileID: 829645400}
+  - component: {fileID: 829645401}
   m_Layer: 0
   m_Name: NavigationArea
   m_TagString: Navigation
@@ -4240,7 +4241,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.096666664
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 85e95d6546eda9849bf3e81501ab5b28, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1be55267ecdd30d4dadc5ebbcc57c894, type: 2}
 --- !u!114 &829645398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,7 +4269,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.093333334
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5dc80c5e7fc147b45a067a094f744e72, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5b68514acb3cfed48bd614e0b82d253f, type: 2}
 --- !u!4 &829645399
 Transform:
   m_ObjectHideFlags: 0
@@ -4293,6 +4294,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60815a8289ee8d8468bd9b1e05a8be6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &829645401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829645396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: -334000983
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.05
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: e0b0f35229c0b0249bb1f537dd76d433, type: 2}
 --- !u!4 &840649755 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4896968709635252, guid: 0781c446ec350f84cbe47690e8e27b6f,
@@ -5220,7 +5249,7 @@ GameObject:
   - component: {fileID: 1018535569}
   - component: {fileID: 1018535568}
   - component: {fileID: 1018535570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Floor
   m_Icon: {fileID: 0}
