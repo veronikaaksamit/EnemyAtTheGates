@@ -26,10 +26,8 @@ namespace Assets.Scripts
                     closestDistance = distance;
                 }
             }
-            closestSpawnPoint = GameObject.Find("AircraftSpawnPoint3");
             transform.position = closestSpawnPoint.transform.position;
             transform.rotation = closestSpawnPoint.transform.rotation;
-            gameObject.transform.Rotate(closestSpawnPoint.transform.rotation.x, closestSpawnPoint.transform.rotation.y, closestSpawnPoint.transform.rotation.z);
             switch (closestSpawnPoint.name)
             {
                 case "AircraftSpawnPoint1":

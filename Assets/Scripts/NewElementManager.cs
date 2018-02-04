@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -31,7 +32,7 @@ namespace Assets.Scripts
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out  hit))
                 {
-                    if (Input.GetKey(KeyCode.Mouse0))
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         if (Elements.Length > 0)
                         {
@@ -41,7 +42,17 @@ namespace Assets.Scripts
                             {
                                 GameObject closestObject = GetClosestObject(hit);
 
-                                if (hit.collider.gameObject.tag == "House" && !IsBarrier() )
+                                if (element.tag == "Bomber" && hit.collider.gameObject.tag == "Enemy")
+                                {
+                                    if (CanUseThatElement())
+                                    {
+                                        created = Instantiate(element);
+                                        UseThatElement();
+                                        created.GetComponent<BombarderMovement>().Fly(hit.collider.gameObject);
+                                    }
+                                }
+
+                                if (hit.collider.gameObject.tag == "House" && !IsBarrier() && element.tag != "Bomber")
                                 {
                                     if (CanUseThatElement())
                                     {
@@ -53,7 +64,7 @@ namespace Assets.Scripts
                                     }
                                 }
 
-                                if (hit.collider.gameObject.tag == "Floor" && IsBarrier())
+                                if (hit.collider.gameObject.tag == "Floor" && IsBarrier() && element.tag != "Bomber")
                                 {
                                     created = InstantiateElement(element, hit);
                                 }
