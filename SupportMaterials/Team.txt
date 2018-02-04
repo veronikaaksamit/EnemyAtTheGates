@@ -1,0 +1,3 @@
+Veronika Aksamítová (410280): hlavní grafièka, tvorba UI, umisování jednotek, nastavení obtínosti; 33,3 %
+Jan Hlava (395986): game design, level design, pohyb nepøátel, barikády, prezentace; 33,3 %
+Pavel Morcinek (433491): logika jednotek, støelba jednotek, správa surovin, konec hry, ivoty nepøátel, prioritní cíl; 33,3 %
