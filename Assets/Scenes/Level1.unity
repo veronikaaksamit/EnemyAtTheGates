@@ -4504,7 +4504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ManPowerCost: 3
   WeaponsCost: 2
-  MunitionCost: 30
+  MunitionCost: 10
 --- !u!4 &786344595 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4896968709635252, guid: 0781c446ec350f84cbe47690e8e27b6f,
@@ -5478,7 +5478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1850889979343084, guid: 1e54b85761dc3b14f95641b11e1ccb2a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e54b85761dc3b14f95641b11e1ccb2a, type: 2}
@@ -7822,6 +7822,39 @@ Prefab:
       propertyPath: Costs.Array.data[4]
       value: 
       objectReference: {fileID: 708663870}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465436858894592, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465436858894592, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Resources.Array.data[0].Count
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: ManpowerIncomePerPeriod
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: ManpowerIncomePeriodInS
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114684366774931422, guid: 884498e8e704ea3488a0c0f71553a5f6,
+        type: 2}
+      propertyPath: Resources.Array.data[1].Count
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 884498e8e704ea3488a0c0f71553a5f6, type: 2}
   m_IsPrefabParent: 0
