@@ -8548,14 +8548,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1850889979343084, guid: 1e54b85761dc3b14f95641b11e1ccb2a, type: 2}
-  SpawnTime: 4
+  SpawnTime: 8
   NumberOfEnemies: 5
   Rotate: 1
   SpawnPoints:
   - {fileID: 551096465}
   - {fileID: 1460305146}
   - {fileID: 566693268}
-  TimeBeforeStart: 33
+  TimeBeforeStart: 39
 --- !u!4 &1465585658
 Transform:
   m_ObjectHideFlags: 0
@@ -8581,7 +8581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1323341215647832, guid: 99785161c0f4c6b45825c96324473077, type: 2}
-  SpawnTime: 3
+  SpawnTime: 7
   NumberOfEnemies: 2
   Rotate: 0
   SpawnPoints:
@@ -8600,12 +8600,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1142568737995610, guid: 3923679512ed5604b8373c3c31d5a925, type: 2}
-  SpawnTime: 12
-  NumberOfEnemies: 2
+  SpawnTime: 16
+  NumberOfEnemies: 3
   Rotate: 0
   SpawnPoints:
   - {fileID: 566693268}
-  TimeBeforeStart: 36
+  TimeBeforeStart: 46
 --- !u!114 &1465585661
 MonoBehaviour:
   m_ObjectHideFlags: 0
