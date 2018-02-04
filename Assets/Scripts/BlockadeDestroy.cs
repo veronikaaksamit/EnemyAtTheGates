@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class BlockadeDestroy : MonoBehaviour
 {
     private List<GameObject> destroyers = new List<GameObject>();
+    private List<GameObject> toRemove = new List<GameObject>();
     private const float START_PERCENTAGE = 100f;
     private float remainsPercentage = START_PERCENTAGE;
 
@@ -50,7 +51,7 @@ public class BlockadeDestroy : MonoBehaviour
         {
             if (enemy == null || enemy.Equals(null))
             {
-                destroyers.Remove(enemy);
+                toRemove.Add(enemy);
             }
             else
             {
@@ -71,6 +72,11 @@ public class BlockadeDestroy : MonoBehaviour
                 }
             }
         }
+        foreach (GameObject enemy in toRemove)
+        {
+            destroyers.Remove(enemy);
+        }
+        toRemove.Clear();
         if (remainsPercentage <= 0)
         {
             DestroyBlockade();
