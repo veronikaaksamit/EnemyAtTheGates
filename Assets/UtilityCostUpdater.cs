@@ -42,12 +42,11 @@ namespace Assets
                         case "Text":
                             if (!MyPlayer.CanUseThatElement(tag))
                             {
-                                Debug.Log("Not enough resources");
-                                texts[i].text = "Not enough resources";
+                                texts[i].enabled = true;
                             }
                             else
                             {
-                                texts[i].text = "enough resources";
+                                texts[i].enabled =false;
                             }
                             break;
                         case "Untagged": break;

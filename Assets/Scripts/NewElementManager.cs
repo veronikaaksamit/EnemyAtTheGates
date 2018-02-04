@@ -11,6 +11,8 @@ namespace Assets.Scripts
     {
         public Player MyPlayer;
         public UnityEvent CheckButtons;
+        public UnityEvent IfNotEnoughResources;
+        public UnityEvent EnoughResources;
         public GameObject[] Elements;
 
         private String SelectedButtonTag = "";
@@ -118,10 +120,21 @@ namespace Assets.Scripts
         private bool CanUseThatElement()
         {
             bool canUse = MyPlayer.CanUseThatElement(SelectedButtonTag);
-            /*if (!canUse)
+            if (!canUse)
             {
-                Debug.Log("Can not use "+ SelectedButtonTag);
-            }*/
+                Debug.Log("Can not use " + SelectedButtonTag);
+                if (IfNotEnoughResources != null)
+                {
+                    IfNotEnoughResources.Invoke();
+                }
+            }
+            else
+            {
+                if (EnoughResources != null)
+                {
+                    EnoughResources.Invoke();
+                }
+            }
             return canUse;
         }
 
