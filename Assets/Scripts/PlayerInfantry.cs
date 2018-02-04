@@ -17,10 +17,18 @@ public class PlayerInfantry : MonoBehaviour, IPlayerUnit
     [SerializeField] private float m_shootsToDouble = 500f;
 
     private float m_timeSinceLastShotInS;
+    private FocusTargetManager m_focusTargetManager;
+
+    void Start()
+    {
+        m_focusTargetManager = FindObjectOfType<FocusTargetManager>();
+    }
 
     void Update()
     {
-        var closestOpposingUnit = UnitUtils.GetClosesEnemyUnitInRange(transform.position, m_range);
+        var focusTarget = m_focusTargetManager.FocusTarget;
+
+        var closestOpposingUnit = UnitUtils.GetClosesEnemyUnitInRange(transform.position, m_range, focusTarget);
 
         if (closestOpposingUnit != null)
         {

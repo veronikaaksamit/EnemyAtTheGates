@@ -13,7 +13,7 @@ public static class UnitUtils{
         return unitCollidersInRadius.Select(collider => collider.GetComponent<IEnemyUnit>());
     }
 
-    public static IEnemyUnit GetClosesEnemyUnitInRange(Vector3 center, float range)
+    public static IEnemyUnit GetClosesEnemyUnitInRange(Vector3 center, float range, IEnemyUnit focusTarget)
     {
         var enemyUnitsInRange = UnitUtils.GetEnemyUnitsInRadius(center, range);
 
@@ -25,6 +25,16 @@ public static class UnitUtils{
         if (enemyUnitsInRange.Count() == 1)
         {
             return enemyUnitsInRange.First();
+        }
+
+        if(focusTarget != null)
+        {
+            bool isFocusTargetInRange = enemyUnitsInRange.First(x => x == focusTarget) != null;
+
+            if (isFocusTargetInRange)
+            {
+                return focusTarget;
+            }
         }
 
         return enemyUnitsInRange.Aggregate(
