@@ -10,7 +10,7 @@ namespace Assets.Scripts
         public int NumOfMines;
         public int NumOfTankBarriers;
         public int NumOfWires;
-        public int NumOfBarriers;
+        public int NumOfBarricades;
 
         public GameObject InfantrymanPrefab;
         public GameObject SniperPrefab;
@@ -19,7 +19,8 @@ namespace Assets.Scripts
 
         public GameObject[] Costs;
 
-        public int ManpowerIncomePerS = 1;
+        public int ManpowerIncomePerPeriod = 1;
+        public float ManpowerIncomePeriodInS = 5;
         private float m_lastManpowerIncomeTime = 0.0f;
 
         public GameResources[] Resources =
@@ -38,9 +39,9 @@ namespace Assets.Scripts
 
         void Update()
         {
-            if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= 1.0f)
+            if (Mathf.Abs(Time.time - m_lastManpowerIncomeTime) >= ManpowerIncomePeriodInS)
             {
-                Resources[0].Count += ManpowerIncomePerS;
+                Resources[0].Count += ManpowerIncomePerPeriod;
                 m_lastManpowerIncomeTime = Time.time;
             }
         }
@@ -98,10 +99,9 @@ namespace Assets.Scripts
             //Debug.Log("Number of BarbedWire " + NumOfWires);
         }
 
-        public void UseBarrier()
+        public void UseBarricade()
         {
-            --this.NumOfBarriers;
-            //Debug.Log("Number of BarbedWire " + NumOfWires);
+            --this.NumOfBarricades;
         }
 
         public void UseManPower(int value)
@@ -133,8 +133,8 @@ namespace Assets.Scripts
                     return NumOfMines > 0;
                 case "TankBarrier":
                     return NumOfTankBarriers > 0;
-                case "Barrier":
-                    return NumOfBarriers > 0;
+                case "Barricade":
+                    return NumOfBarricades > 0;
                 case "Bomber":
                 case "Sniper":
                 case "MachineGun":
@@ -231,8 +231,8 @@ namespace Assets.Scripts
                 case "TankBarrier":
                     UseTankBarrier();
                     break;
-                case "Barrier":
-                    UseBarrier();
+                case "Barricade":
+                    UseBarricade();
                     break;
                 case "Bomber":
                 case "Sniper":

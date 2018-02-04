@@ -51,14 +51,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0108e5de85b0f41a29e03a63b80158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfantrymanPrefab: {fileID: 0}
-  SniperPrefab: {fileID: 0}
-  MachineGunNestPrefab: {fileID: 0}
-  TankPrefab: {fileID: 0}
+  NumOfMines: 2
+  NumOfTankBarriers: 2
+  NumOfWires: 1
+  NumOfBarricades: 1
+  InfantrymanPrefab: {fileID: 1387245949369504, guid: 3b9c7637621043b49b0e32b1fa2a047b,
+    type: 2}
+  SniperPrefab: {fileID: 1742543470269132, guid: 4e300c60f74a5e64eb76f1f12a2f77d9,
+    type: 2}
+  MachineGunNestPrefab: {fileID: 1293553600594214, guid: fe0b778b7f9a83647b413b42e2db3a11,
+    type: 2}
+  AntiAircraftWarfarePrefab: {fileID: 1826235702829612, guid: dbc0da3e6a302254d93d5128e2953fac,
+    type: 2}
+  Costs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ManpowerIncomePerPeriod: 1
+  ManpowerIncomePeriodInS: 5
   Resources:
   - Type: 1
-    Count: 0
+    Count: 1
   - Type: 2
-    Count: 0
+    Count: 30
   - Type: 3
-    Count: 0
+    Count: 150

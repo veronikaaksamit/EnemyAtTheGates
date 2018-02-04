@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -10,14 +11,22 @@ public class EnemyManager : MonoBehaviour
     public bool Rotate = true;
     public Transform[] SpawnPoints;
 
+    public float TimeBeforeStart = 2f;
+
 
     void Start ()
     {
+        StartCoroutine(waitSeconds(TimeBeforeStart));
         if (NumberOfEnemies > 0)
         {
             InvokeRepeating("Spawn", SpawnTime, SpawnTime);
         }
 
+    }
+
+    IEnumerator waitSeconds(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,10 @@ namespace Assets
 
         public void UpdateTexts(String tag)
         {
-            //Debug.Log("called with tag " + tag);
+            if (tag == null)
+            {
+                Debug.Log("called with tag null");
+            }
             //Debug.Log("number of texts in UCUpdater "+ texts.Length);
             GameResources[] resources = MyPlayer.GetValueOfUtility(tag);
             
@@ -42,11 +46,7 @@ namespace Assets
                         case "Text":
                             if (!MyPlayer.CanUseThatElement(tag))
                             {
-                                texts[i].enabled = true;
-                            }
-                            else
-                            {
-                                texts[i].enabled =false;
+                                ShowNotEnoughFor2Sec(texts[i]);
                             }
                             break;
                         case "Untagged": break;
@@ -62,6 +62,13 @@ namespace Assets
             }
 
 
+        }
+
+        public IEnumerator ShowNotEnoughFor2Sec(Text t)
+        {
+            t.GetComponent<Text>().text = "Not enough resources";
+            yield return new WaitForSeconds(3);
+            t.GetComponent<Text>().text = "";
         }
     }
 }

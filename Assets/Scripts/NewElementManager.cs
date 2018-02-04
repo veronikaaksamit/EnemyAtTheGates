@@ -13,7 +13,6 @@ namespace Assets.Scripts
         public Player MyPlayer;
         public UnityEvent CheckButtons;
         public UnityEvent IfNotEnoughResources;
-        public UnityEvent EnoughResources;
         public GameObject[] Elements;
 
         private String SelectedButtonTag = "";
@@ -117,7 +116,7 @@ namespace Assets.Scripts
                 case "BarbedWire":
                 case "Mine":
                 case "TankBarrier":
-                case "Barrier": return true;
+                case "Barricade": return true;
                 case "Soldier":
                 case "Sniper":
                 case "MachineGun":
@@ -137,13 +136,6 @@ namespace Assets.Scripts
                 if (IfNotEnoughResources != null)
                 {
                     IfNotEnoughResources.Invoke();
-                }
-            }
-            else
-            {
-                if (EnoughResources != null)
-                {
-                    EnoughResources.Invoke();
                 }
             }
             return canUse;

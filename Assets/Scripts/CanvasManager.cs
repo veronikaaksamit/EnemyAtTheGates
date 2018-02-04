@@ -46,6 +46,12 @@ namespace Assets.Scripts
                             buttons[i].enabled = false;
                         }
                         break;
+                    case "Barricade":
+                        if (Player.NumOfBarricades <= 0)
+                        {
+                            buttons[i].enabled = false;
+                        }
+                        break;
                     case "Bomber": break;
                     default: Debug.Log(buttons[i].tag + "is not between cases");
                         break;
