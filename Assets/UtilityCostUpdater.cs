@@ -23,6 +23,7 @@ namespace Assets
             //Debug.Log("called with tag " + tag);
             //Debug.Log("number of texts in UCUpdater "+ texts.Length);
             GameResources[] resources = MyPlayer.GetValueOfUtility(tag);
+            
             if (resources != null)
             {
                 for (int i = 0; i < texts.Length; i++)
@@ -38,7 +39,17 @@ namespace Assets
                         case "Weapons":
                             texts[i].text = resources[1].Count.ToString();
                             break;
-                        case "Text": break;
+                        case "Text":
+                            if (!MyPlayer.CanUseThatElement(tag))
+                            {
+                                texts[i].enabled = true;
+                            }
+                            else
+                            {
+                                texts[i].enabled =false;
+                            }
+                            break;
+                        case "Untagged": break;
                         default:
                             Debug.Log(texts[i].tag + "   is not between cases");
                             break;
@@ -54,3 +65,4 @@ namespace Assets
         }
     }
 }
+

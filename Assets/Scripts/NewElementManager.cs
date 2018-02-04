@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -10,19 +11,20 @@ namespace Assets.Scripts
     {
         public Player MyPlayer;
         public UnityEvent CheckButtons;
+        public UnityEvent IfNotEnoughResources;
+        public UnityEvent EnoughResources;
         public GameObject[] Elements;
-        public int SelectedButtonIndex = 10;
-        
+
+        private String SelectedButtonTag = "";
+
 
         void Start ()
         {
         }
-
         
 
         void Update()
         {
-            //Debug.Log("Update");
             if (Input.GetMouseButton(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -39,21 +41,25 @@ namespace Assets.Scripts
                             {
                                 GameObject closestObject = GetClosestObject(hit);
 
-                                if (hit.collider.gameObject.tag == "House" && SelectedButtonIndex > 2)
+                                if (hit.collider.gameObject.tag == "House" && !IsBarrier() )
                                 {
-                                    GameObject house = hit.collider.gameObject;
-                                    Vector3 position = house.transform.position;
-                                    Destroy(hit.collider.gameObject);
-                                    created = Instantiate(element, position, Quaternion.identity);
+                                    if (CanUseThatElement())
+                                    {
+                                        GameObject house = hit.collider.gameObject;
+                                        Vector3 position = house.transform.position;
+                                        Destroy(hit.collider.gameObject);
+                                        created = Instantiate(element, position, Quaternion.identity);
+                                        UseThatElement();
+                                    }
                                 }
 
-                                if (hit.collider.gameObject.tag == "Floor" && SelectedButtonIndex < 3)
+                                if (hit.collider.gameObject.tag == "Floor" && IsBarrier())
                                 {
                                     created = InstantiateElement(element, hit);
                                 }
 
                                 GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-                                SelectedButtonIndex = 10;
+                                
 
                                 if (created != null && closestObject != null)
                                 {
@@ -71,20 +77,19 @@ namespace Assets.Scripts
             }
         }
 
-
-        public void SetSelectedButtonIndex(int selectedButton)
+        public void SetSelectedButtonTag(String newItemTag)
         {
-            SelectedButtonIndex = selectedButton;
+            SelectedButtonTag = newItemTag;
         }
 
         private GameObject InstantiateElement(GameObject element, RaycastHit hit)
         {
             GameObject created = null;
-            if (CanUseThatElement(element))
+            if (CanUseThatElement())
             {
                 created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                //Debug.Log("Using " + element.tag);
-                UseThatElement(element);
+                
+                UseThatElement();
                 if (CheckButtons != null)
                 {
                     CheckButtons.Invoke();
@@ -94,55 +99,78 @@ namespace Assets.Scripts
             return created;
         }
 
-        private bool CanUseThatElement(GameObject element)
+        private bool IsBarrier()
         {
-            
-            switch (element.tag)
+            switch (SelectedButtonTag)
             {
                 case "BarbedWire":
-                    return MyPlayer.NumOfWires > 0;
                 case "Mine":
-                    return MyPlayer.NumOfMines > 0;
                 case "TankBarrier":
-                    return MyPlayer.NumOfTankBarriers > 0;
-                case "Bomber": break;
-                default:
-                    Debug.Log(element.tag + "is not between cases");
-                    break;
+                case "Barrier": return true;
+                case "Soldier":
+                case "Sniper":
+                case "MachineGun":
+                case "AntiAircraftW": return false;
+                    default: Debug.Log(SelectedButtonTag + " is not stated in IsBarrier");
+                        break;
             }
             return false;
         }
 
-        private void UseThatElement(GameObject element)
+        private bool CanUseThatElement()
         {
-            Debug.Log("Using " + element.tag );
-            switch (element.tag)
+            bool canUse = MyPlayer.CanUseThatElement(SelectedButtonTag);
+            if (!canUse)
             {
-                case "BarbedWire":
-                    MyPlayer.UseBarbedWire();
-                    break;
-                case "Mine":
-                    MyPlayer.UseMine();
-                    break;
-                case "TankBarrier":
-                    MyPlayer.UseTankBarrier();
-                    break;
-                case "Bomber": break;
-                default:
-                    Debug.Log(element.tag + "is not between cases");
-                    break;
+                Debug.Log("Can not use " + SelectedButtonTag);
+                if (IfNotEnoughResources != null)
+                {
+                    IfNotEnoughResources.Invoke();
+                }
             }
+            else
+            {
+                if (EnoughResources != null)
+                {
+                    EnoughResources.Invoke();
+                }
+            }
+            return canUse;
         }
 
+        private void UseThatElement()
+        {
+            MyPlayer.UseThatElement(SelectedButtonTag);
+        }
         
 
         private GameObject GetElementToInstantiate()
         {
             GameObject result = null;
-            if (Elements.Length > SelectedButtonIndex)
+            for (int i = 0; i < Elements.Length; i++)
             {
-                result = Elements[SelectedButtonIndex];
+                if (Elements[i].tag == SelectedButtonTag)
+                {
+                    result = Elements[i];
+                }
+
+                if (Elements[i].tag == "House")
+                {
+                    SpriteRenderer[] sprites = Elements[i].GetComponentsInChildren<SpriteRenderer>();
+                    for (int j = 0; j < sprites.Length; j++)
+                    {
+                        if (sprites[j].tag!= "Untagged" && sprites[j].tag == SelectedButtonTag)
+                        {
+                            return Elements[i];
+                        }
+                    }
+                }
             }
+            if (result == null)
+            {
+                Debug.Log("Problem with tag"+ SelectedButtonTag);
+            }
+            
             return result;
         }
 

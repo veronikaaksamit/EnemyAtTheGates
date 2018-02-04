@@ -26,6 +26,7 @@ namespace Assets.Scripts
                     case "MachineGun":
                         break;
                     case "Sniper": break;
+                    case "Soldier": break;
                     case "AntiAircraftW": break;
                     case "BarbedWire":
                         if (Player.NumOfWires <= 0)

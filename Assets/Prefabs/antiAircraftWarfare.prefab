@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212940331346017640}
   m_Layer: 11
   m_Name: anitAircraft
-  m_TagString: Untagged
+  m_TagString: AntiAircraftW
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967291
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23354260174940458}
   m_Layer: 0
   m_Name: antiAircraftWarfare
-  m_TagString: AntiAircraftW
+  m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967291
