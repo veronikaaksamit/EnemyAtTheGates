@@ -32,9 +32,11 @@ namespace Assets.Scripts
 
         public IBlockade[] AvailableBlockades;
 
+        private NavMeshBaker m_navMeshBaker;
+
         void Start()
         {
-
+            m_navMeshBaker = GameObject.FindGameObjectWithTag("Navigation").GetComponent<NavMeshBaker>();
         }
 
         void Update()
@@ -90,18 +92,21 @@ namespace Assets.Scripts
         public void UseTankBarrier()
         {
             --this.NumOfTankBarriers;
+            m_navMeshBaker.BakeNavMesh();
             //Debug.Log("Number of TankBarrier " + NumOfTankBarriers);
         }
 
         public void UseBarbedWire()
         {
             --this.NumOfWires;
+            m_navMeshBaker.BakeNavMesh();
             //Debug.Log("Number of BarbedWire " + NumOfWires);
         }
 
         public void UseBarricade()
         {
             --this.NumOfBarricades;
+            m_navMeshBaker.BakeNavMesh();
         }
 
         public void UseManPower(int value)
