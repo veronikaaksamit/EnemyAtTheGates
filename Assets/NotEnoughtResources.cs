@@ -20,7 +20,7 @@ public class NotEnoughtResources : MonoBehaviour {
     public IEnumerator ActivateFor2Seconds()
     {
         GetComponent<Text>().text = "Not enough resources";
-        yield return 0;
+        yield return new WaitForSeconds(3);
         GetComponent<Text>().text = "";
     }
 }

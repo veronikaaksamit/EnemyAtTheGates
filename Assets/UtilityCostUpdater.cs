@@ -67,7 +67,7 @@ namespace Assets
         public IEnumerator ShowNotEnoughFor2Sec(Text t)
         {
             t.GetComponent<Text>().text = "Not enough resources";
-            yield return 0;
+            yield return new WaitForSeconds(3);
             t.GetComponent<Text>().text = "";
         }
     }
