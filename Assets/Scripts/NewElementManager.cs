@@ -12,7 +12,6 @@ namespace Assets.Scripts
         public Player MyPlayer;
         public UnityEvent CheckButtons;
         public GameObject[] Elements;
-        //public int SelectedButtonIndex = 10;
 
         private String SelectedButtonTag = "";
 
@@ -20,12 +19,10 @@ namespace Assets.Scripts
         void Start ()
         {
         }
-
         
 
         void Update()
         {
-            //Debug.Log("Update");
             if (Input.GetMouseButton(0))
             {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -42,7 +39,7 @@ namespace Assets.Scripts
                             {
                                 GameObject closestObject = GetClosestObject(hit);
 
-                                if (hit.collider.gameObject.tag == "House" /*&& SelectedButtonIndex > 2*/ && !IsBarrier())
+                                if (hit.collider.gameObject.tag == "House" && !IsBarrier())
                                 {
                                     GameObject house = hit.collider.gameObject;
                                     Vector3 position = house.transform.position;
@@ -50,13 +47,13 @@ namespace Assets.Scripts
                                     created = Instantiate(element, position, Quaternion.identity);
                                 }
 
-                                if (hit.collider.gameObject.tag == "Floor" /*&& SelectedButtonIndex < 3 */&& IsBarrier())
+                                if (hit.collider.gameObject.tag == "Floor" && IsBarrier())
                                 {
                                     created = InstantiateElement(element, hit);
                                 }
 
                                 GameObject.Find("EventSystem").GetComponent<UnityEngine.EventSystems.EventSystem>().SetSelectedGameObject(null);
-                                //SelectedButtonIndex = 10;
+                                
 
                                 if (created != null && closestObject != null)
                                 {
@@ -74,12 +71,6 @@ namespace Assets.Scripts
             }
         }
 
-
-        public void SetSelectedButtonIndex(int selectedButton)
-        {
-            //SelectedButtonIndex = selectedButton;
-        }
-
         public void SetSelectedButtonTag(String newItemTag)
         {
             SelectedButtonTag = newItemTag;
@@ -91,7 +82,7 @@ namespace Assets.Scripts
             if (CanUseThatElement(element))
             {
                 created = Instantiate(element, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.identity);
-                //Debug.Log("Using " + element.tag);
+                
                 UseThatElement(element);
                 if (CheckButtons != null)
                 {
@@ -122,43 +113,13 @@ namespace Assets.Scripts
 
         private bool CanUseThatElement(GameObject element)
         {
-            
-            switch (element.tag)
-            {
-                case "BarbedWire":
-                    return MyPlayer.NumOfWires > 0;
-                case "Mine":
-                    return MyPlayer.NumOfMines > 0;
-                case "TankBarrier":
-                    return MyPlayer.NumOfTankBarriers > 0;
-                case "Bomber": break;
-                default:
-                    Debug.Log(element.tag + "is not between cases");
-                    break;
-            }
-            return false;
+            return MyPlayer.CanUseThatElement(element.tag);
         }
 
         private void UseThatElement(GameObject element)
         {
-            switch (element.tag)
-            {
-                case "BarbedWire":
-                    MyPlayer.UseBarbedWire();
-                    break;
-                case "Mine":
-                    MyPlayer.UseMine();
-                    break;
-                case "TankBarrier":
-                    MyPlayer.UseTankBarrier();
-                    break;
-                case "Bomber": break;
-                default:
-                    Debug.Log(element.tag + "is not between cases");
-                    break;
-            }
+            MyPlayer.CanUseThatElement(element.tag);
         }
-
         
 
         private GameObject GetElementToInstantiate()
@@ -170,6 +131,7 @@ namespace Assets.Scripts
                 {
                     result = Elements[i];
                 }
+
                 if (Elements[i].tag == "House")
                 {
                     SpriteRenderer[] sprites = Elements[i].GetComponentsInChildren<SpriteRenderer>();
@@ -186,11 +148,7 @@ namespace Assets.Scripts
             {
                 Debug.Log("Problem with tag"+ SelectedButtonTag);
             }
-
-            /*if (Elements.Length > SelectedButtonIndex)
-            {
-                result = Elements[SelectedButtonIndex];
-            }*/
+            
             return result;
         }
 
