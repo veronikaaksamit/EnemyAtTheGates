@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -42,11 +43,7 @@ namespace Assets
                         case "Text":
                             if (!MyPlayer.CanUseThatElement(tag))
                             {
-                                texts[i].enabled = true;
-                            }
-                            else
-                            {
-                                texts[i].enabled =false;
+                                ShowNotEnoughFor2Sec(texts[i]);
                             }
                             break;
                         case "Untagged": break;
@@ -62,6 +59,13 @@ namespace Assets
             }
 
 
+        }
+
+        public IEnumerator ShowNotEnoughFor2Sec(Text t)
+        {
+            t.GetComponent<Text>().text = "Not enough resources";
+            yield return 0;
+            t.GetComponent<Text>().text = "";
         }
     }
 }
