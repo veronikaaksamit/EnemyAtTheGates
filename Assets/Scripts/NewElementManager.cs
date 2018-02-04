@@ -12,7 +12,6 @@ namespace Assets.Scripts
         public Player MyPlayer;
         public UnityEvent CheckButtons;
         public UnityEvent IfNotEnoughResources;
-        public UnityEvent EnoughResources;
         public GameObject[] Elements;
 
         private String SelectedButtonTag = "";
@@ -126,13 +125,6 @@ namespace Assets.Scripts
                 if (IfNotEnoughResources != null)
                 {
                     IfNotEnoughResources.Invoke();
-                }
-            }
-            else
-            {
-                if (EnoughResources != null)
-                {
-                    EnoughResources.Invoke();
                 }
             }
             return canUse;

@@ -5712,6 +5712,7 @@ GameObject:
   - component: {fileID: 1148507896}
   - component: {fileID: 1148507898}
   - component: {fileID: 1148507897}
+  - component: {fileID: 1148507899}
   m_Layer: 1
   m_Name: CannotUseText
   m_TagString: Text
@@ -5778,6 +5779,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148507895}
+--- !u!114 &1148507899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148507895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9639e8b855d8f4185ebeb9533a232c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1157216026
 Prefab:
   m_ObjectHideFlags: 0
@@ -7457,25 +7469,9 @@ MonoBehaviour:
   IfNotEnoughResources:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1148507895}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  EnoughResources:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1148507895}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1148507899}
+        m_MethodName: SetActiveForFewSeconds
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7484,6 +7480,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  EnoughResources:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   Elements:
