@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 
 namespace Assets.Scripts
